@@ -116,6 +116,7 @@ button.edit-project
 - Clicking this should:
 -- i) Make the inputs editable
 -- ii) Bring up the same button.submit-project as is mentioned above
+-- iii) Edit the project object itself in allProjects.projectList
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
 
@@ -144,6 +145,7 @@ button.edit-todo
 - Clicking this should:
 -- i) Make the inputs editable
 -- ii) Bring up the same button.submit-todo as is mentioned above
+-- iii) Edit the todo object itself in project.todoList
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
 button.toggle-display
