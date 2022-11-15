@@ -104,13 +104,12 @@ button#create-project
 -- i) Bring up a form that allows the setting of project title
 -- ii) Bring up a button.submit-project which: 
 --- a) Freezes the inputs until this project's button.edit-project is clicked
---- b) Creates a project object (with a soonestDueDate of "undefined" and a priority of negative infinity) and puts it into its correct position in allProject.projectList, updating data-index values accordingly
+--- b) Creates a project object (with a soonestDueDate of "undefined" and a priority of negative infinity) and puts it into its correct position in allProject.projectList, then puts it in the position of the DOM corresponding to that index position
 
 button.delete-project
 - Clicking this should:
 -- i) Remove this project from allProjects.projectList
 -- ii) Remove this div.project or whatever from the DOM
--- iii) The data-index values of each div.project should be updated accordingly, so these values still correspond to the position of the represented project object in allProjects.projectList (see the library repo for inspiration)
 
 button.edit-project
 - Clicking this should:
@@ -132,14 +131,13 @@ button#create-todo
 -- i) Bring up a form that allows the setting of todo's title, description, dueDate
 -- ii) Bring up a button.submit-todo which: 
 --- a) Freezes the inputs until this todo's button.edit-todo is clicked
---- b) Creates a todo object (with a priority equal to negative of dueDate in seconds, or negative infinity if a dueDate isn't selected) and puts it into its correct position in project.todoList, updating data-index values accordingly
+--- b) Creates a todo object (with a priority equal to negative of dueDate in seconds, or negative infinity if a dueDate isn't selected) and puts it into its correct position in project.todoList
 
 button.delete-todo
 - Clicking this should:
 -- i) Remove this TODO from project.todoList
 -- ii) Remove this div.todo or whatever from the DOM
 -- iii) button.edit-todo
--- iv) The data-index values of each div.todo should be updated accordingly, so these values still correspond to the position of the represented todo object in projects.todoList (see the library repo for inspiration)
 
 button.edit-todo
 - Clicking this should:
@@ -154,9 +152,8 @@ button.toggle-display
 
 # Notes
 
-- Whenever anything is inserted into or removed from a list, data-index values should be updated
+- DOM items (specifically for project objects and todoItem objects) should be linked to their objects by giving the DOM item and object a unique ID that can be looked for when iterating through allProjects.projectList or project.todoList; can store value in data-object-id in DOM and simply as a property of the project object or TODO object
 - If a TODO is created or deleted, may have to change project.soonestDueDate, which may impact project.priority. May also have to change appearance of displayed list of TODOs.
 - If a project.priority changes, the order of projects in the DOM may have to change (for now, just reset or something)
 - Creating new project might alter order of projects in DOM
-- Any project and TODO creation, edit, delete may result ultimately in change of data-index values
 - Will use factory functions and modules
