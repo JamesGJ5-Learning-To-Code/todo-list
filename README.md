@@ -162,7 +162,7 @@ button.toggle-display
 - If a TODO is created or deleted, may have to change project.soonestDueDate, which may impact project.priority. May also have to change appearance of displayed list of TODOs.
 - If a project.priority changes, the order of projects in the DOM may have to change (for now, just reset or something)
 - Creating new project might alter order of projects in DOM
-- Will use factory functions and modules
+- Will use classes for practice
 
 
 # Step-By-Step Plan
