@@ -73,9 +73,10 @@ For now, the application logic will be split into 3 main objects:
 - i) todoList (a list of references to todoItem objects in this project)
 -- LATER, consider using a heap for efficient list reordering when adding etc.
 -- References to todoItem objects with higher priorities come earlier in the list
-- ii) title
-- iii) soonestDueDate (equal to soonest dueDate of objects in todoList)
-- iv) priority (equal to priority of highest priority of objects in todoList)
+- ii) nextObjectId
+- iii) title
+- iv) soonestDueDate (equal to soonest dueDate of objects in todoList)
+- v) priority (equal to priority of highest priority of objects in todoList)
 - NOT made using a module
 
 3. For project list object (called allProjects)
@@ -83,7 +84,8 @@ For now, the application logic will be split into 3 main objects:
 - Properties:
 - i) projectList (a list of references to project objects)
 -- LATER, consider using a heap for efficient list reordering when adding etc.
-- References to project objects with higher priorities come earlier in the list
+-- References to project objects with higher priorities come earlier in the list
+- ii) nextObjectId
 - IS made using a module
 
 4. For controlling the DOM (called domController)
@@ -161,3 +163,15 @@ button.toggle-display
 - If a project.priority changes, the order of projects in the DOM may have to change (for now, just reset or something)
 - Creating new project might alter order of projects in DOM
 - Will use factory functions and modules
+
+
+# Step-By-Step Plan
+
+1. Write application logic for allProjects
+2. Write application logic for project
+3. Write DOM logic for project
+4. Add a couple of projects to the DOM
+5. Write application logic for todoItem
+...
+Penultimate. Hiding/expansion
+Last. Persistence
