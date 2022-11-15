@@ -118,10 +118,14 @@ button.edit-project
 -- iii) Edit the project object itself in allProjects.projectList
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
+button.toggle-display
+- Clicking this should:
+-- i) Toggle whether each of the TODOs is expanded (unhidden) or not, by toggling class of "hidden" accordingly
+
 
 2. If a project is expanded by clicking on it, you see a list of TODOs, with a button (button.createTodo) at the bottom for adding a new TODO. This should be made dynamically. Within each TODO you see:
 - i) todoObject.title
-- ii) todoObject.description
+- ii) todoObject.description (WHEN EXPANDED)
 - iii) todoObject.dueDate
 - iv) button.delete-todo
 - iv) button.toggle-display
@@ -148,7 +152,7 @@ button.edit-todo
 
 button.toggle-display
 - Clicking this should:
--- i) Toggle whether the TODOs are hidden or not, by toggling class of "hidden" accordingly
+-- i) Toggle whether each of the TODOs is expanded (unhidden) or not, by toggling class of "hidden" accordingly
 
 # Notes
 
