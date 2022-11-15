@@ -167,11 +167,13 @@ button.toggle-display
 
 # Step-By-Step Plan
 
-1. Write application logic for allProjects
+1. Write application logic for todoItem
 2. Write application logic for project
-3. Write DOM logic for project
-4. Add a couple of projects to the DOM
-5. Write application logic for todoItem
+3. Write application logic for allProjects
+4. Write DOM logic
+5. Add a couple of projects to the DOM
+6. Add a couple of TODOs to each project
+7. Test everything
 ...
 Penultimate. Hiding/expansion
 Last. Persistence
