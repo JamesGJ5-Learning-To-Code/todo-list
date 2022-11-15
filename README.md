@@ -71,7 +71,7 @@ For now, the application logic will be split into 3 main objects:
 - Stores TODOs
 - Properties:
 - i) todoList (a list of references to todoItem objects in this project)
--- LATER, consider using a heap for efficient list reordering when a etc.
+-- LATER, consider using a heap for efficient list reordering when adding etc.
 -- References to todoItem objects with higher priorities come earlier in the list
 - ii) title
 - iii) soonestDueDate (equal to soonest dueDate of objects in todoList)
@@ -82,7 +82,7 @@ For now, the application logic will be split into 3 main objects:
 - Stores projects
 - Properties:
 - i) projectList (a list of references to project objects)
--- LATER, consider using a heap for efficient list reordering when a etc.
+-- LATER, consider using a heap for efficient list reordering when adding etc.
 - References to project objects with higher priorities come earlier in the list
 - IS made using a module
 
@@ -93,7 +93,7 @@ For now, the application logic will be split into 3 main objects:
 
 # DOM Layout
 
-1. Upon opening, you just see a list of projects, laid out just as in allProjects.projectList, with a button (button.createProject) at the bottom for adding a new project. Within each project, unless, expanded, you see only:
+1. Upon opening, you just see a list of projects, laid out just as in allProjects.projectList, with a button (button.createProject) at the bottom for adding a new project. Within each project, unless expanded, you see only:
 - i) project.title
 - ii) project.soonestDueDate
 - iii) button.edit-project
@@ -157,3 +157,4 @@ button.toggle-display
 - If a project.priority changes, the order of projects in the DOM may have to change (for now, just reset or something)
 - Creating new project might alter order of projects in DOM
 - Any project and TODO creation, edit, delete may result ultimately in change of data-index values
+- Will use factory functions and modules
