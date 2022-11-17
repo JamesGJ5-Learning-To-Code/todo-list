@@ -75,14 +75,14 @@ ADDED TO CLASS CONSTRUCTOR
 2. For project objects (called project)
 - Stores TODOs
 - Properties:
-- i) todoList (a list of references to todoItem objects in this project)
+- i) DONE todoList (a list of references to todoItem objects in this project)
 -- LATER, consider using a heap for efficient list reordering when adding etc.
 -- References to todoItem objects with higher priorities come earlier in the list
-- ii) nextObjectId
-- iii) title
+- ii) DONE nextObjectId
+- iii) DONE title
 - iv) soonestDueDate (equal to soonest dueDate of objects in todoList)
-- v) priority (equal to priority of highest priority of objects in todoList)
-- vi) objectId
+- v) DONE priority (equal to priority of highest priority of objects in todoList)
+- vi) DONE objectId
 
 3. For project list object (called allProjects)
 - Stores projects
@@ -175,7 +175,7 @@ button.toggle-display
 
 # Step-By-Step Plan
 
-1. Write application logic for todoItem
+1. DONE Write application logic for todoItem
 2. Write application logic for project
 3. Write application logic for allProjects
 4. Write DOM logic
