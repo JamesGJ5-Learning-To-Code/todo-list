@@ -1,5 +1,6 @@
 import { TodoItem } from "./modules/todoItem";
 import { Project } from "./modules/project";
+import { AllProjects } from "./modules/allProjects";
 
 // const todoItem1 = new TodoItem({
 //     title: "Hello", 

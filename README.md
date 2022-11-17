@@ -90,11 +90,11 @@ ADDED TO CLASS CONSTRUCTOR
 - i) DONE projectList (a list of references to project objects)
 -- LATER, consider using a heap for efficient list reordering when adding etc.
 -- References to project objects with higher priorities come earlier in the list
-- ii) nextObjectId
+- ii) DONE nextObjectId
 
 4. For controlling the DOM (called domController)
 - Properties:
--- contentDiv
+-- DONE contentDiv
 
 
 # DOM Layout
