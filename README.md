@@ -176,8 +176,8 @@ button.toggle-display
 
 # Step-By-Step Plan
 
-1. DONE Write application logic for todoItem
-2. Write application logic for project
+1. DONE FOR NOW Write application logic for todoItem
+2. DONE FOR NOW Write application logic for project
 3. Write application logic for allProjects
 4. Write DOM logic
 5. Add a couple of projects to the DOM
