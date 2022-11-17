@@ -99,7 +99,7 @@ ADDED TO CLASS CONSTRUCTOR
 
 # DOM Layout
 
-1. Upon opening, you just see a list of projects, laid out just as in allProjects.projectList, with a button (button.createProject) at the bottom for adding a new project. Within each project, unless expanded, you see only:
+1. Upon opening, you just see a list of projects, laid out just as in allProjects.projectList, with a button (button#create-project) at the top for adding a new project. Within each project, unless expanded, you see only:
 - i) project.title
 - ii) project.soonestDueDate
 - iii) button.edit-project
@@ -172,6 +172,7 @@ button.toggle-display
 - Will use classes for practice
 - Consider adding getters and setter to classes, but only if security requires
 - Try to make as many class properties private as possible
+- Stop class methods and properties from polluting global namespace so much
 
 
 # Step-By-Step Plan

@@ -6,6 +6,12 @@ export class Project {
         this.nextObjectId = 0;
         this.soonestDueDate = undefined;
     }
+    set title(value) {
+        this._title = (value) ? value : "Nameless Project";
+    }
+    get title() {
+        return this._title;
+    }
     set soonestDueDate(value) {
         this._soonestDueDate = value;
         this.priority = (value) ? -value : -Infinity;

@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=document.querySelector("input#new-project-title");console.log(!e.value)})();
