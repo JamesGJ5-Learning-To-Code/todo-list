@@ -1,0 +1,1 @@
+(()=>{"use strict";const t=new class{constructor({title:t,description:e,dueDate:i,objectId:o}){this.title=t,this.description=e,this.dueDate=i,this.objectId=o,this.priority=-i}}({title:"Hello",description:"World",dueDate:123,objectId:5});t.title=123,console.log(t.title)})();

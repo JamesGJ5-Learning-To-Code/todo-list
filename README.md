@@ -1,6 +1,6 @@
 # Suggestions from TOP
 
-- TODOs will be objects made dynamically via factories or constructors/classes.
+- TODOs will be objects made dynamically via classes
 
 1. Brainstorm what kind of properties TODO-items will have.
 
@@ -62,10 +62,15 @@ For now, the application logic will be split into 3 main objects:
 1. For TODO-item objects (called todoItem)
 - Properties:
 - i) title
+ADDED TO CLASS CONSTRUCTOR
 - ii) description
+ADDED TO CLASS CONSTRUCTOR
 - iii) dueDate
+ADDED TO CLASS CONSTRUCTOR
 - iv) priority
-- NOT made using a module
+ADDED TO CLASS CONSTRUCTOR
+- v) objectId
+ADDED TO CLASS CONSTRUCTOR
 
 2. For project objects (called project)
 - Stores TODOs
@@ -77,7 +82,7 @@ For now, the application logic will be split into 3 main objects:
 - iii) title
 - iv) soonestDueDate (equal to soonest dueDate of objects in todoList)
 - v) priority (equal to priority of highest priority of objects in todoList)
-- NOT made using a module
+- vi) objectId
 
 3. For project list object (called allProjects)
 - Stores projects
@@ -86,7 +91,6 @@ For now, the application logic will be split into 3 main objects:
 -- LATER, consider using a heap for efficient list reordering when adding etc.
 -- References to project objects with higher priorities come earlier in the list
 - ii) nextObjectId
-- IS made using a module
 
 4. For controlling the DOM (called domController)
 - Properties:
@@ -150,6 +154,9 @@ button.edit-todo
 -- i) Make the inputs editable
 -- ii) Bring up the same button.submit-todo as is mentioned above
 -- iii) Edit the todo object itself in project.todoList
+-- iv) If a todo's priority changes such that the following is necessitated then:
+--- a) Move it to its correct new position in project.todoList
+--- b) Move it to its correct new position in the DOM
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
 button.toggle-display
@@ -163,6 +170,7 @@ button.toggle-display
 - If a project.priority changes, the order of projects in the DOM may have to change (for now, just reset or something)
 - Creating new project might alter order of projects in DOM
 - Will use classes for practice
+- Consider adding getters and setter to classes, but only if security requires
 
 
 # Step-By-Step Plan
