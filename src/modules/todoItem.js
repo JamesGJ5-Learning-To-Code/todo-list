@@ -8,7 +8,7 @@ export class TodoItem {
     }
     set dueDate(value) {
         this._dueDate = value;
-        this.priority = -value;
+        this.priority = (value) ? -value: -Infinity;
     }
     get dueDate() {
         return this._dueDate;
