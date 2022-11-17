@@ -8,7 +8,7 @@ export class Project {
     }
     set soonestDueDate(value) {
         this._soonestDueDate = value;
-        this.priority = (value) ? -value : Infinity;
+        this.priority = (value) ? -value : -Infinity;
     }
     get soonestDueDate() {
         return this._soonestDueDate;
