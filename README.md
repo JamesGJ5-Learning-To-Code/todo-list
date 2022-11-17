@@ -87,7 +87,7 @@ ADDED TO CLASS CONSTRUCTOR
 3. For project list object (called allProjects)
 - Stores projects
 - Properties:
-- i) projectList (a list of references to project objects)
+- i) DONE projectList (a list of references to project objects)
 -- LATER, consider using a heap for efficient list reordering when adding etc.
 -- References to project objects with higher priorities come earlier in the list
 - ii) nextObjectId
