@@ -19,4 +19,12 @@ export class Project {
     get priority() {
         return this._priority;
     }
+    set nextObjectId(value) {
+        this._nextObjectId = value;
+    }
+    get nextObjectId() {
+        const res = this._nextObjectId;
+        this.nextObjectId = res + 1;
+        return res;
+    }
 }

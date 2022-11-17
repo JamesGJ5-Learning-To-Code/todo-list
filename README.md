@@ -171,6 +171,7 @@ button.toggle-display
 - Creating new project might alter order of projects in DOM
 - Will use classes for practice
 - Consider adding getters and setter to classes, but only if security requires
+- Try to make as many class properties private as possible
 
 
 # Step-By-Step Plan
