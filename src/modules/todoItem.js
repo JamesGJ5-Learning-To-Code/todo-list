@@ -8,9 +8,20 @@ export class TodoItem {
         // and see. Below assumes that the negative of dueDate in the format it comes 
         // will be sufficient in giving this.priority a metric that is higher for 
         // dates that are closer (and thus smaller)
-        this.priority = -dueDate;
     }
-
     // TODO: write a setter for this.dueDate that ensures that this.priority is 
     // changed accordingly
+    set dueDate(value) {
+        this._dueDate = value;
+        this.priority = -value;
+    }
+    get dueDate() {
+        return this._dueDate;
+    }
+    set priority(value) {
+        this._priority = value;
+    }
+    get priority() {
+        return this._priority;
+    }
 }
