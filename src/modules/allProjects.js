@@ -23,4 +23,7 @@ export class AllProjects {
     sortByPriority() {
         this.projectList.sort((p1, p2) => p1.priority - p2.priority);
     }
+    getIndex(project) {
+        const index = this.projectList.findIndex(element => element === project);
+    }
 }
