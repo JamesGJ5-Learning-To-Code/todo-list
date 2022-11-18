@@ -12,4 +12,5 @@ export class AllProjects {
         this.nextObjectId = res + 1;
         return res;
     }
+    // TODO: write add(project) method
 }

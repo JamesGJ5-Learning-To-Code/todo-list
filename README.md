@@ -105,12 +105,14 @@ ADDED TO CLASS CONSTRUCTOR
 - iii) button.edit-project
 - iv) button.delete-project
 
-button#create-project
+button#new-project-button
 - Clicking this should:
--- i) Bring up a form that allows the setting of project title
+-- i) DONE Bring up a form that allows the setting of project title
 -- ii) Bring up a button.submit-project which: 
---- a) Freezes the inputs until this project's button.edit-project is clicked
---- b) Creates a project object (with a soonestDueDate of "undefined" and a priority of negative infinity) and puts it into its correct position in allProject.projectList, then puts it in the position of the DOM corresponding to that index position
+--- a) DONE Creates a project object (with a soonestDueDate of "undefined" and a priority of negative infinity) and 
+Puts it into its correct position in allProject.projectList, then 
+Puts it in the position of the DOM corresponding to that index position as a form, making sure the inputs are frozen until button.edit-project is clicked then 
+Resets the #new-project-form
 
 button.delete-project
 - Clicking this should:
@@ -181,6 +183,7 @@ button.toggle-display
 2. DONE FOR NOW Write application logic for project
 3. DONE FOR NOW Write application logic for allProjects
 4. Write DOM logic
+- Give functionality to button#new-project-button
 5. Add a couple of projects to the DOM
 6. Add a couple of TODOs to each project
 7. Test everything

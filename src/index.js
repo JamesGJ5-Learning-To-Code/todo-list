@@ -1,14 +1,16 @@
 import { TodoItem } from "./modules/todoItem";
-import { Project } from "./modules/project";
+// import { Project } from "./modules/project";
 import { AllProjects } from "./modules/allProjects";
 import { DOMController } from "./modules/domController";
 
-// const allProjects = new AllProjects()
+const allProjects = new AllProjects();
+
+const domController = new DOMController(allProjects);
 
 // const project1 = new Project({
 //     title: "Project 1",
 //     objectId: allProjects.nextObjectId
-// })
+// });
 
 // const todoItem1 = new TodoItem({
 //     title: "Hello", 
