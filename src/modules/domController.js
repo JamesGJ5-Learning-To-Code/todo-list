@@ -11,7 +11,7 @@ export class DOMController {
         this.newProjectButton.addEventListener('click', () => {
             this.newProjectForm.classList.toggle('hidden');
         });
-        this.newProjectForm.querySelector('button').addEventListener('click', () => {
+        this.newProjectForm.querySelector('button').addEventListener('click', (e) => {
             const createNewProject = () => {
                 const newProjectTitle = document.querySelector('#new-project-title').value;
                 const newProject = new Project({
@@ -22,6 +22,7 @@ export class DOMController {
             };
             const newProject = createNewProject();
             this.allProjects.add(newProject);
+            e.preventDefault();
         });
     }
 }
