@@ -99,7 +99,6 @@ export class DOMController {
             reset();
         });
         // TODO: add event listener for button.edit-project
-        // TODO: add event listener for button.delete-project
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('delete-project')) {
                 const removeInternally = (projectForm) => {

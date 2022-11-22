@@ -116,8 +116,8 @@ DONE Resets the #new-project-form
 
 button.delete-project
 - Clicking this should:
--- i) Remove this project from allProjects.projectList
--- ii) Remove this div.project or whatever from the DOM
+-- i) DONE Remove this project from allProjects.projectList
+-- ii) DONE Remove this div.project or whatever from the DOM
 
 button.edit-project
 - Clicking this should:
@@ -184,7 +184,8 @@ button.toggle-display
 3. DONE FOR NOW Write application logic for allProjects
 4. Write DOM logic
 - DONE FOR NOW Give functionality to button#new-project-button
-- Give functionality to button.delete-project
+- DONE Give functionality to button.delete-project
+- Give functionality to button.edit-project
 5. Add a couple of projects to the DOM
 6. Add a couple of TODOs to each project
 7. Test everything
