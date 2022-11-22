@@ -25,7 +25,7 @@ export class AllProjects {
     }
     getIndex(projectID) {
         const index = this.projectList.findIndex(project => {
-            return project.objectId === projectID
+            return project.objectId === projectID;
         });
         return index;
     }
