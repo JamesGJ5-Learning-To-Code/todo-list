@@ -124,6 +124,7 @@ button.edit-project
 -- i) DONE Make the inputs editable
 -- ii) Bring up the same button.submit-project as is mentioned above
 -- iii) Edit the project object itself in allProjects.projectList
+- iv) Disable the inputs again
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
 button.toggle-display
