@@ -29,4 +29,7 @@ export class AllProjects {
         });
         return index;
     }
+    remove(index) {
+        this.projectList.splice(index, 1);
+    }
 }

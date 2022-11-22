@@ -100,10 +100,22 @@ export class DOMController {
         });
         // TODO: add event listener for button.edit-project
         // TODO: add event listener for button.delete-project
-        // this.allProjectsDiv.addEventListener('click', (e) => {
-        //     if (e.target && e.target.classList.contains('delete-project')) {
-        //         ;
-        //     };
-        // });
+        this.allProjectsDiv.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('delete-project')) {
+                const removeInternally = (projectForm) => {
+                    const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+                    allProjects.remove(projectID);
+                };
+                const removeFromDOM = (projectForm) => {
+                    projectForm.remove();
+                };
+                const removeProject = () => {
+                    const projectForm = e.target.parentNode
+                    removeInternally(projectForm);
+                    removeFromDOM(projectForm);
+                };
+                removeProject();
+            };
+        });
     }
 }
