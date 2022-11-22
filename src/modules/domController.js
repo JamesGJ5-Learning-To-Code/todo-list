@@ -26,6 +26,7 @@ export class DOMController {
                 const name = `project-${projectID}-input`;
                 titleInput.name = name;
                 titleInput.id = name;
+                // TODO: freeze input before returning it
                 return titleInput;
             };
             const makeTitleLabel = (titleInput) => {
