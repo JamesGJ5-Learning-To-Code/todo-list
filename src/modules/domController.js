@@ -92,10 +92,18 @@ export class DOMController {
             const newProject = createNewProject();
             this.allProjects.add(newProject);
             const projectForm = makeProjectForm(newProject);
-            displayProject(projectForm, this.allProjects.getIndex(newProject));
+            displayProject(
+                projectForm, 
+                this.allProjects.getIndex(newProject.objectId)
+            );
             reset();
         });
         // TODO: add event listener for button.edit-project
         // TODO: add event listener for button.delete-project
+        // this.allProjectsDiv.addEventListener('click', (e) => {
+        //     if (e.target && e.target.classList.contains('delete-project')) {
+        //         ;
+        //     };
+        // });
     }
 }
