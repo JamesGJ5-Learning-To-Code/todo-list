@@ -105,7 +105,20 @@ export class DOMController {
                     const titleInput = e.target.parentNode.querySelector('input');
                     titleInput.disabled = false;
                 };
+                const makeSubmitEditButton = () => {
+                    const submitEditButton = document.createElement('button');
+                    submitEditButton.type = 'button';
+                    submitEditButton.textContent = 'Submit';
+                    submitEditButton.classList.add('submit-edit');
+                    return submitEditButton;
+                };
+                const displaySubmitEditButton = () => {
+                    const submitEditButton = makeSubmitEditButton();
+                    const projectForm = e.target.parentNode;
+                    projectForm.appendChild(submitEditButton);
+                };
                 enableTitleInput();
+                displaySubmitEditButton();
             };
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
