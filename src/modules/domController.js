@@ -41,6 +41,7 @@ export class DOMController {
             };
             const makeEditProjectButton = () => {
                 const editProjectButton = document.createElement('button');
+                editProjectButton.textContent = 'Edit Project';
                 editProjectButton.classList.add('edit-project');
                 return editProjectButton;
             };
