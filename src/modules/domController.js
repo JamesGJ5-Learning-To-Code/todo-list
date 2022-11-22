@@ -11,6 +11,7 @@ export class DOMController {
         this.newProjectButton.addEventListener('click', () => {
             this.newProjectForm.classList.toggle('hidden');
         });
+        // Event listener for the button with textContent 'Submit'
         this.newProjectForm.querySelector('button').addEventListener('click', (e) => {
             const createNewProject = () => {
                 const newProjectTitle = document.querySelector('#new-project-title').value;
@@ -84,10 +85,15 @@ export class DOMController {
                     );
                 };
             };
+            const reset = () => {
+                this.newProjectForm.reset();
+                this.newProjectForm.classList.add('hidden');
+            };
             const newProject = createNewProject();
             this.allProjects.add(newProject);
             const projectForm = makeProjectForm(newProject);
             displayProject(projectForm, this.allProjects.getIndex(newProject));
+            reset();
         });
         // TODO: add event listener for button.edit-project
         // TODO: add event listener for button.delete-project
