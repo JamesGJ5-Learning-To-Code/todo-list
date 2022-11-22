@@ -122,8 +122,8 @@ button.delete-project
 button.edit-project
 - Clicking this should:
 -- i) DONE Make the inputs editable
--- ii) Bring up the same button.submit-project as is mentioned above
--- iii) Edit the project object itself in allProjects.projectList
+-- ii) DONE Bring up a button.submit-project
+-- iii) DONE Edit the project object itself in allProjects.projectList
 - iv) Disable the inputs again
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
@@ -186,7 +186,7 @@ button.toggle-display
 4. Write DOM logic
 - DONE FOR NOW Give functionality to button#new-project-button
 - DONE Give functionality to button.delete-project
-- Give functionality to button.edit-project
+- DONE Give functionality to button.edit-project
 5. Add a couple of projects to the DOM
 6. Add a couple of TODOs to each project
 7. Test everything
