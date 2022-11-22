@@ -47,6 +47,7 @@ export class DOMController {
             };
             const makeDeleteProjectButton = () => {
                 const deleteProjectButton = document.createElement('button');
+                deleteProjectButton.textContent = 'Delete Project';
                 deleteProjectButton.classList.add('delete-project');
                 return deleteProjectButton;
             };
