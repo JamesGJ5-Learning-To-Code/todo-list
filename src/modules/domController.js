@@ -102,6 +102,7 @@ export class DOMController {
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('edit-project')) {
                 const enableTitleInput = () => {
+                    // TODO: select the below via its ID
                     const titleInput = e.target.parentNode.querySelector('input');
                     titleInput.disabled = false;
                 };
@@ -119,6 +120,33 @@ export class DOMController {
                 };
                 enableTitleInput();
                 displaySubmitEditButton();
+            };
+        });
+        this.allProjectsDiv.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('submit-edit')) {
+                // Find project in allProjects.projectList using data-object-id
+                // Use value of titleInput and set it as new title of project
+                // Disable titleInput
+                const getProjectID = () => {
+                    const projectForm = e.target.parentNode;
+                    const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+                    return projectID;
+                };
+                const getProject = (projectID) => {
+                    const index = this.allProjects.getIndex(projectID);
+
+                    const project = this.allProjects.projectList[index];
+                    return project;
+                };
+                const editProject = (project) => {
+                    // TODO: select the below via its ID
+                    const titleInput = e.target.parentNode.querySelector('input');
+                    project.title = titleInput.value;
+                    titleInput.disabled = true;
+                };
+                const projectID = getProjectID();
+                const project = getProject(projectID);
+                editProject(project);
             };
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
