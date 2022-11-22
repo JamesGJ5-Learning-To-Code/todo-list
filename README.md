@@ -121,7 +121,7 @@ button.delete-project
 
 button.edit-project
 - Clicking this should:
--- i) Make the inputs editable
+-- i) DONE Make the inputs editable
 -- ii) Bring up the same button.submit-project as is mentioned above
 -- iii) Edit the project object itself in allProjects.projectList
 -- LATER: allow user to click "cancel" if they don't want to save their changes

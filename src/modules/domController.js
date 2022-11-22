@@ -98,7 +98,16 @@ export class DOMController {
             );
             reset();
         });
-        // TODO: add event listener for button.edit-project
+        // TODO: complete event listener for button.edit-project
+        this.allProjectsDiv.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('edit-project')) {
+                const enableTitleInput = () => {
+                    const titleInput = e.target.parentNode.querySelector('input');
+                    titleInput.disabled = false;
+                };
+                enableTitleInput();
+            };
+        });
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('delete-project')) {
                 const removeInternally = (projectForm) => {
