@@ -35,6 +35,7 @@ export class DOMController {
             };
             const makeSoonestDueDateDiv = () => {
                 const soonestDueDateDiv = document.createElement('div');
+                soonestDueDateDiv.textContent = 'Soonest Due Date: N/A';
                 soonestDueDateDiv.classList.add('soonest-due-date');
                 return soonestDueDateDiv;
             };
