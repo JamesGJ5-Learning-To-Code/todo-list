@@ -43,12 +43,14 @@ export class DOMController {
             };
             const makeEditProjectButton = () => {
                 const editProjectButton = document.createElement('button');
+                editProjectButton.type = 'button';
                 editProjectButton.textContent = 'Edit Project';
                 editProjectButton.classList.add('edit-project');
                 return editProjectButton;
             };
             const makeDeleteProjectButton = () => {
                 const deleteProjectButton = document.createElement('button');
+                deleteProjectButton.type = 'button';
                 deleteProjectButton.textContent = 'Delete Project';
                 deleteProjectButton.classList.add('delete-project');
                 return deleteProjectButton;
@@ -86,7 +88,6 @@ export class DOMController {
             this.allProjects.add(newProject);
             const projectForm = makeProjectForm(newProject);
             displayProject(projectForm, this.allProjects.getIndex(newProject));
-            e.preventDefault();
         });
         // TODO: add event listener for button.edit-project
         // TODO: add event listener for button.delete-project
