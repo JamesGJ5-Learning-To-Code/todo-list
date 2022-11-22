@@ -20,9 +20,10 @@ export class DOMController {
                 });
                 return newProject;
             };
-            const makeTitleInput = (projectID) => {
+            const makeTitleInput = (title, projectID) => {
                 const titleInput = document.createElement('input');
-                const name = `project-${projectID}-input`
+                titleInput.value = title;
+                const name = `project-${projectID}-input`;
                 titleInput.name = name;
                 titleInput.id = name;
                 return titleInput;
@@ -51,11 +52,11 @@ export class DOMController {
                 deleteProjectButton.classList.add('delete-project');
                 return deleteProjectButton;
             };
-            const makeProjectForm = (projectID) => {
+            const makeProjectForm = (project) => {
                 const projectForm = document.createElement('form');
-                projectForm.setAttribute('data-object-id', projectID);
+                projectForm.setAttribute('data-object-id', project.objectId);
 
-                const titleInput = makeTitleInput(projectID);
+                const titleInput = makeTitleInput(project.title, project.objectId);
                 const titleLabel = makeTitleLabel(titleInput);
                 const soonestDueDateDiv = makeSoonestDueDateDiv();
                 const editProjectButton = makeEditProjectButton();
@@ -82,7 +83,7 @@ export class DOMController {
             };
             const newProject = createNewProject();
             this.allProjects.add(newProject);
-            const projectForm = makeProjectForm(newProject.objectId);
+            const projectForm = makeProjectForm(newProject);
             displayProject(projectForm, this.allProjects.getIndex(newProject));
             e.preventDefault();
         });
