@@ -23,6 +23,7 @@ export class DOMController {
             const makeTitleInput = (title, projectID) => {
                 const titleInput = document.createElement('input');
                 titleInput.value = title;
+                titleInput.disabled = true;
                 const name = `project-${projectID}-input`;
                 titleInput.name = name;
                 titleInput.id = name;
