@@ -219,7 +219,12 @@ export class DOMController {
                     const createTodoButtonParent = e.target.parentNode;
                     createTodoButtonParent.insertBefore(newTodoForm, e.target.nextSibling);
                 };
+                const toggleNewTodoForm = () => {
+                    const newTodoForm = document.querySelector('#new-todo-form');
+                    newTodoForm.classList.toggle('hidden');
+                };
                 relocateNewTodoForm();
+                toggleNewTodoForm();
             };
         });
     }
