@@ -183,5 +183,11 @@ export class DOMController {
                 removeProject();
             };
         });
+        this.allProjectsDiv.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('toggle-todo-list')) {
+                const todoListDiv = e.target.parentNode.querySelector('.todo-list');
+                todoListDiv.classList.toggle('hidden');
+            };
+        });
     }
 }
