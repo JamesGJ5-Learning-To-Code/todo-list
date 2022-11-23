@@ -105,7 +105,7 @@ ADDED TO CLASS CONSTRUCTOR
 - iii) button.edit-project
 - iv) button.delete-project
 
-button#new-project-button
+DONE button#new-project-button
 - Clicking this should:
 -- i) DONE Bring up a form that allows the setting of project title
 -- ii) Bring up a button.submit-project which: 
@@ -114,12 +114,12 @@ DONE Puts it into its correct position in allProject.projectList, then
 DONE Puts it in the position of the DOM corresponding to that index position as a form, making sure the inputs are frozen until button.edit-project is clicked then 
 DONE Resets the #new-project-form
 
-button.delete-project
+DONE button.delete-project
 - Clicking this should:
 -- i) DONE Remove this project from allProjects.projectList
 -- ii) DONE Remove this div.project or whatever from the DOM
 
-button.edit-project
+DONE button.edit-project
 - Clicking this should:
 -- i) DONE Make the inputs editable
 -- ii) DONE Bring up a button.submit-project
@@ -129,7 +129,7 @@ button.edit-project
 
 button.toggle-display
 - Clicking this should:
--- i) Toggle whether each of the TODOs is expanded (unhidden) or not, by toggling class of "hidden" accordingly
+-- i) Toggle whether a project's todo list is expanded (unhidden) or not, by toggling class of "hidden" accordingly
 
 
 2. If a project is expanded by clicking on it, you see a list of TODOs, with a button (button.createTodo) at the bottom for adding a new TODO. This should be made dynamically. Within each TODO you see:
@@ -187,6 +187,12 @@ button.toggle-display
 - DONE FOR NOW Give functionality to button#new-project-button
 - DONE Give functionality to button.delete-project
 - DONE Give functionality to button.edit-project
+- Make the creation of a project form result also in the creation of a 
+div.todo-list which will house individual todos; div.todo-list should have class 
+'hidden' by default
+- Make a button to expand and close the above div.todo-list by toggling whether or not is hidden
+- Give functionality to the above button
+- Create a button for adding todos in the div.todo-list
 5. Add a couple of projects to the DOM
 6. Add a couple of TODOs to each project
 7. Test everything
