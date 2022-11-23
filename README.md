@@ -190,7 +190,7 @@ button.toggle-todo
 - DONE Make the creation of a project form result also in the creation of a 
 div.todo-list which will house individual todos; div.todo-list should have class 
 'hidden' by default
-- Make a button to expand and close the above div.todo-list by toggling whether or not is hidden
+- DONE Make a button that will expand and close the above div.todo-list by toggling whether or not is hidden
 - Give functionality to the above button
 - Create a button for adding todos in the div.todo-list
 5. Add a couple of projects to the DOM
