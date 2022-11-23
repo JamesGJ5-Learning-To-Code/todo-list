@@ -12,13 +12,20 @@
     <div id="content">
         <button id="new-project-button">Click here to create a new project!</button>
         <form id="new-project-form" class="hidden">
-            <label for="new-project-title">Project Name: </label>
+            <label for="new-project-title">Project Title: </label>
             <input type="text" name="new-project-title" id="new-project-title">
-            <button type="button">
-                Submit
-            </button>
+            <button type="button">Submit</button>
         </form>
         <div id="all-projects">
+            <form id="new-todo-form" class="hidden">
+                <label for="new-todo-title">Todo Title: </label>
+                <input type="text" name="new-todo-title" id="new-todo-title">
+                <label for="new-todo-description">Todo Description: </label>
+                <input type="text" name="new-todo-description" id="new-todo-description">
+                <label for="new-todo-due-date">Todo Due Date: </label>
+                <input type="text" name="new-todo-due-date" id="new-todo-due-date">
+                <button type="button">Submit</button>
+            </form>
         </div>
     </div>
 </body>
