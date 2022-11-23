@@ -146,7 +146,7 @@ button.create-todo
 -- ii) Bring up the '#new-todo-form button' which: 
 <!-- --- a) Freezes the inputs until this todo's button.edit-todo is clicked
 --- b) Creates a todo object (with a priority equal to negative of dueDate in seconds, or negative infinity if a dueDate isn't selected) and puts it into its correct position in project.todoList -->
---- a) Creates a TodoItem object using the values of the inputs in #new-todo-form (title, description and dueDate) and an objectId yielded by the parent Project item
+--- a) DONE Creates a TodoItem object using the values of the inputs in #new-todo-form (title, description and dueDate) and an objectId yielded by the parent Project item
 --- b) Puts the TodoItem object in its correct place in Project.todoList, afterwards sorting said list by priority (will have to draw inspiration from 
 the methods in AllProjects and recreate them in Project)
 --- c) Finds the new index of said TodoItem (look up via todoID, will have to put a method in Project that allows this like in AllProjects)
