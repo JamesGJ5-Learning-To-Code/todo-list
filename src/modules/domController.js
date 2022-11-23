@@ -231,15 +231,11 @@ export class DOMController {
                 const projectObject = this.allProjects.projectList[projectIndex];
                 return projectObject;
             };
-            const getNextObjectId = () => {
-                const parentProject = getParentProject();
-                return parentProject.nextObjectId;
-            };
-            const makeTodoItem = () => {
+            const makeTodoItem = (parentProject) => {
                 const newTodoTitle = document.querySelector('#new-todo-title').value;
                 const newTodoDueDate = document.querySelector('#new-todo-due-date').value;
                 const newTodoDescription = document.querySelector('#new-todo-description').value;
-                const newTodoObjectId = getNextObjectId();
+                const newTodoObjectId = parentProject.nextObjectId;
                 
                 const newTodoItem = new TodoItem({
                     title: newTodoTitle,
@@ -249,7 +245,8 @@ export class DOMController {
                 });
                 return newTodoItem;
             };
-            const newTodoItem = makeTodoItem();
+            const projectObject = getParentProject();
+            const newTodoItem = makeTodoItem(projectObject);
         });
     }
 }
