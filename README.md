@@ -127,9 +127,9 @@ DONE button.edit-project
 - iv) Disable the inputs again
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
-button.toggle-todo-list
+DONE button.toggle-todo-list
 - Clicking this should:
--- i) Toggle whether a project's todo list is expanded (unhidden) or not, by toggling class of "hidden" accordingly
+-- i) DONE Toggle whether a project's todo list is expanded (unhidden) or not, by toggling class of "hidden" accordingly
 
 
 2. If a project is expanded by clicking on it, you see a list of TODOs, with a button (button.createTodo) at the bottom for adding a new TODO. This should be made dynamically. Within each TODO you see:
@@ -192,7 +192,8 @@ div.todo-list which will house individual todos; div.todo-list should have class
 'hidden' by default
 - DONE Make a button that will expand and close the above div.todo-list by toggling whether or not is hidden
 - DONE Give functionality to the above button
-- Create a button for adding todos in the div.todo-list
+- DONE Create a button for adding todos in the div.todo-list
+- Give functionality to the above button
 5. Add a couple of projects to the DOM
 6. Add a couple of TODOs to each project
 7. Test everything
