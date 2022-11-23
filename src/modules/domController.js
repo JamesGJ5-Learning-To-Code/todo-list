@@ -208,6 +208,19 @@ export class DOMController {
             };
         });
         // Add event listener to button.create-todo
-        // 
+        // Clicking a button.create-todo should:
+        // 1. Move #new-todo-form so that it is the higher-index, adjacent sibling 
+        // of the button.create-todo
+        // 2. Unhide #new-todo-form
+        this.allProjectsDiv.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('create-todo')) {
+                const relocateNewTodoForm = () => {
+                    const newTodoForm = document.querySelector('#new-todo-form');
+                    const createTodoButtonParent = e.target.parentNode;
+                    createTodoButtonParent.insertBefore(newTodoForm, e.target.nextSibling);
+                };
+                relocateNewTodoForm();
+            };
+        });
     }
 }
