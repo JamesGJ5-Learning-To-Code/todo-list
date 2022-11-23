@@ -1,4 +1,5 @@
 import { Project } from "./project"
+import { TodoItem } from "./todoItem";
 
 export class DOMController {
     constructor(allProjects) {
@@ -223,6 +224,32 @@ export class DOMController {
             };
         });
         // Submit button in #new-todo-form
-        // this.allProjectsDiv
+        this.newTodoForm.querySelector('button').addEventListener('click', (e) => {
+            const getParentProject = () => {
+                const projectID = parseInt(this.newTodoForm.parentNode.getAttribute('data-object-id'));
+                const projectIndex = this.allProjects.getIndex(projectID);
+                const projectObject = this.allProjects.projectList[projectIndex];
+                return projectObject;
+            };
+            const getNextObjectId = () => {
+                const parentProject = getParentProject();
+                return parentProject.nextObjectId;
+            };
+            const makeTodoItem = () => {
+                const newTodoTitle = document.querySelector('#new-todo-title').value;
+                const newTodoDueDate = document.querySelector('#new-todo-due-date').value;
+                const newTodoDescription = document.querySelector('#new-todo-description').value;
+                const newTodoObjectId = getNextObjectId();
+                
+                const newTodoItem = new TodoItem({
+                    title: newTodoTitle,
+                    dueDate: newTodoDueDate,
+                    description: newTodoDescription,
+                    objectId: newTodoObjectId
+                });
+                return newTodoItem;
+            };
+            const newTodoItem = makeTodoItem();
+        });
     }
 }
