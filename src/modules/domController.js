@@ -125,7 +125,6 @@ export class DOMController {
             );
             reset();
         });
-        // TODO: complete event listener for button.edit-project
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('edit-project')) {
                 const enableTitleInput = () => {
@@ -207,11 +206,6 @@ export class DOMController {
                 toggleTodoListDiv();
             };
         });
-        // Add event listener to button.create-todo
-        // Clicking a button.create-todo should:
-        // 1. Move #new-todo-form so that it is the higher-index, adjacent sibling 
-        // of the button.create-todo
-        // 2. Unhide #new-todo-form
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('create-todo')) {
                 const relocateNewTodoForm = () => {
