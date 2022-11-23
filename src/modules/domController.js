@@ -32,7 +32,7 @@ export class DOMController {
             };
             const makeTitleLabel = (titleInput) => {
                 const titleLabel = document.createElement('label');
-                titleLabel.textContent = 'Project Name: ';
+                titleLabel.textContent = 'Project Title: ';
                 titleLabel.setAttribute('for', titleInput.id);
                 return titleLabel;
             };
@@ -202,5 +202,7 @@ export class DOMController {
                 todoListDiv.classList.toggle('hidden');
             };
         });
+        // Add event listener to button.create-todo
+        // 
     }
 }
