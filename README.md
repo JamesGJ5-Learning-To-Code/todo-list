@@ -136,15 +136,23 @@ DONE button.toggle-todo-list
 - i) todoObject.title
 - ii) todoObject.description (WHEN EXPANDED)
 - iii) todoObject.dueDate
-- iv) button.delete-todo
-- iv) button.toggle-todo
+- iv) button.edit-todo
+- v) button.delete-todo
+- vi) button.toggle-todo
 
 button.create-todo
 - Clicking this should:
--- i) Bring up a form that allows the setting of todo's title, description, dueDate
--- ii) Bring up a button.submit-todo which: 
---- a) Freezes the inputs until this todo's button.edit-todo is clicked
---- b) Creates a todo object (with a priority equal to negative of dueDate in seconds, or negative infinity if a dueDate isn't selected) and puts it into its correct position in project.todoList
+-- i) DONE Bring up a form that allows the setting of todo's title, description, dueDate
+-- ii) Bring up the '#new-todo-form button' which: 
+<!-- --- a) Freezes the inputs until this todo's button.edit-todo is clicked
+--- b) Creates a todo object (with a priority equal to negative of dueDate in seconds, or negative infinity if a dueDate isn't selected) and puts it into its correct position in project.todoList -->
+--- a) Creates a TodoItem object using the values of the inputs in #new-todo-form (title, description and dueDate) and an objectId yielded by the parent Project item
+--- b) Puts the TodoItem object in its correct place in Project.todoList, afterwards sorting said list by priority (will have to draw inspiration from 
+the methods in AllProjects and recreate them in Project)
+--- c) Finds the new index of said TodoItem (look up via todoID, will have to put a method in Project that allows this like in AllProjects)
+--- d) Creates a todoItemForm (containing with title, dueDate, description (add TODO to hide it by default, and add TODO to make button.toggle-todo that toggles whether it is shown), button.edit-todo and button.delete-todo) with data-object-id as the string of the TodoItem's objectId
+--- e) Puts the todoItemForm into the correct position in the DOM
+--- f) Resets #new-todo-form (like in the reset() in the 'newProjectForm button' event listener)
 
 button.delete-todo
 - Clicking this should:
