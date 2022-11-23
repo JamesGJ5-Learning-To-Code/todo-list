@@ -7,6 +7,7 @@ export class DOMController {
         this.newProjectButton = document.querySelector('#new-project-button');
         this.newProjectForm = document.querySelector('#new-project-form');
         this.allProjectsDiv = document.querySelector('#all-projects');
+        this.newTodoForm = document.querySelector('#new-todo-form');
 
         this.newProjectButton.addEventListener('click', () => {
             this.newProjectForm.classList.toggle('hidden');
@@ -214,12 +215,14 @@ export class DOMController {
                     createTodoButtonParent.insertBefore(newTodoForm, e.target.nextSibling);
                 };
                 const toggleNewTodoForm = () => {
-                    const newTodoForm = document.querySelector('#new-todo-form');
-                    newTodoForm.classList.toggle('hidden');
+                    // const newTodoForm = document.querySelector('#new-todo-form');
+                    this.newTodoForm.classList.toggle('hidden');
                 };
                 relocateNewTodoForm();
                 toggleNewTodoForm();
             };
         });
+        // Submit button in #new-todo-form
+        // this.allProjectsDiv
     }
 }
