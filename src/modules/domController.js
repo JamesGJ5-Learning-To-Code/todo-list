@@ -68,6 +68,7 @@ export class DOMController {
                 createTodoButton.type = 'button';
                 createTodoButton.textContent = 'Create Todo';
                 createTodoButton.classList.add('create-todo');
+                createTodoButton.classList.add('hidden');
                 return createTodoButton;
             };
             const makeTodoListDiv = () => {
@@ -194,8 +195,16 @@ export class DOMController {
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('toggle-todo-list')) {
-                const todoListDiv = e.target.parentNode.querySelector('.todo-list');
-                todoListDiv.classList.toggle('hidden');
+                const toggleCreateTodoButton = () => {
+                    const createTodoButton = e.target.parentNode.querySelector('.create-todo');
+                    createTodoButton.classList.toggle('hidden');
+                };
+                const toggleTodoListDiv = () => {
+                    const todoListDiv = e.target.parentNode.querySelector('.todo-list');
+                    todoListDiv.classList.toggle('hidden');
+                };
+                toggleCreateTodoButton();
+                toggleTodoListDiv();
             };
         });
         // Add event listener to button.create-todo
