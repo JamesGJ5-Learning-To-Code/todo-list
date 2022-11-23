@@ -69,6 +69,19 @@ export class DOMController {
                 todoListDiv.classList.add('hidden');
                 return todoListDiv;
             };
+            const makeCreateTodoButton = () => {
+                const createTodoButton = document.createElement('button');
+                createTodoButton.type = 'button';
+                createTodoButton.textContent = 'Create Todo';
+                createTodoButton.classList.add('create-todo');
+                return createTodoButton;
+            };
+            const makeTodoList = () => {
+                const todoListDiv = makeTodoListDiv();
+                const createTodoButton = makeCreateTodoButton();
+                todoListDiv.appendChild(createTodoButton);
+                return todoListDiv;
+            };
             const makeProjectForm = (project) => {
                 const projectForm = document.createElement('form');
                 projectForm.setAttribute('data-object-id', project.objectId);
@@ -79,7 +92,7 @@ export class DOMController {
                 const editProjectButton = makeEditProjectButton();
                 const deleteProjectButton = makeDeleteProjectButton();
                 const toggleTodoListButton = makeToggleTodoListButton();
-                const todoListDiv = makeTodoListDiv();
+                const todoList = makeTodoList();
 
                 projectForm.appendChild(titleLabel);
                 projectForm.appendChild(titleInput);
@@ -87,7 +100,7 @@ export class DOMController {
                 projectForm.appendChild(editProjectButton);
                 projectForm.appendChild(deleteProjectButton);
                 projectForm.appendChild(toggleTodoListButton);
-                projectForm.appendChild(todoListDiv);
+                projectForm.appendChild(todoList);
 
                 return projectForm;
             };
