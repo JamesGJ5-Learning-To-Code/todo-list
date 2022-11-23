@@ -127,7 +127,7 @@ DONE button.edit-project
 - iv) Disable the inputs again
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
-button.toggle-display
+button.toggle-todo-list
 - Clicking this should:
 -- i) Toggle whether a project's todo list is expanded (unhidden) or not, by toggling class of "hidden" accordingly
 
@@ -137,7 +137,7 @@ button.toggle-display
 - ii) todoObject.description (WHEN EXPANDED)
 - iii) todoObject.dueDate
 - iv) button.delete-todo
-- iv) button.toggle-display
+- iv) button.toggle-todo
 
 button#create-todo
 - Clicking this should:
@@ -162,7 +162,7 @@ button.edit-todo
 --- b) Move it to its correct new position in the DOM
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
-button.toggle-display
+button.toggle-todo
 - Clicking this should:
 -- i) Toggle whether each of the TODOs is expanded (unhidden) or not, by toggling class of "hidden" accordingly
 
