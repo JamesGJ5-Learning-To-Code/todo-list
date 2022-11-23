@@ -63,12 +63,6 @@ export class DOMController {
                 toggleTodoListButton.classList.add('toggle-todo-list');
                 return toggleTodoListButton;
             };
-            const makeTodoListDiv = () => {
-                const todoListDiv = document.createElement('div');
-                todoListDiv.classList.add('todo-list');
-                todoListDiv.classList.add('hidden');
-                return todoListDiv;
-            };
             const makeCreateTodoButton = () => {
                 const createTodoButton = document.createElement('button');
                 createTodoButton.type = 'button';
@@ -76,10 +70,10 @@ export class DOMController {
                 createTodoButton.classList.add('create-todo');
                 return createTodoButton;
             };
-            const makeTodoList = () => {
-                const todoListDiv = makeTodoListDiv();
-                const createTodoButton = makeCreateTodoButton();
-                todoListDiv.appendChild(createTodoButton);
+            const makeTodoListDiv = () => {
+                const todoListDiv = document.createElement('div');
+                todoListDiv.classList.add('todo-list');
+                todoListDiv.classList.add('hidden');
                 return todoListDiv;
             };
             const makeProjectForm = (project) => {
@@ -92,7 +86,8 @@ export class DOMController {
                 const editProjectButton = makeEditProjectButton();
                 const deleteProjectButton = makeDeleteProjectButton();
                 const toggleTodoListButton = makeToggleTodoListButton();
-                const todoList = makeTodoList();
+                const createTodoButton = makeCreateTodoButton();
+                const todoListDiv = makeTodoListDiv();
 
                 projectForm.appendChild(titleLabel);
                 projectForm.appendChild(titleInput);
@@ -100,7 +95,8 @@ export class DOMController {
                 projectForm.appendChild(editProjectButton);
                 projectForm.appendChild(deleteProjectButton);
                 projectForm.appendChild(toggleTodoListButton);
-                projectForm.appendChild(todoList);
+                projectForm.appendChild(createTodoButton);
+                projectForm.appendChild(todoListDiv);
 
                 return projectForm;
             };
