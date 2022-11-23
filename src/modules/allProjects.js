@@ -12,11 +12,8 @@ export class AllProjects {
         this.nextObjectId = res + 1;
         return res;
     }
-    // TODO: write add(project) method
     add(project) {
         this.projectList.push(project);
-        // TODO: when list is replaced with heap, the below shouldn't need to 
-        // be called so disable it
         this.sortByPriority();
         // console.log(this.projectList);
     }
