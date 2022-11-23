@@ -187,7 +187,7 @@ button.toggle-display
 - DONE FOR NOW Give functionality to button#new-project-button
 - DONE Give functionality to button.delete-project
 - DONE Give functionality to button.edit-project
-- Make the creation of a project form result also in the creation of a 
+- DONE Make the creation of a project form result also in the creation of a 
 div.todo-list which will house individual todos; div.todo-list should have class 
 'hidden' by default
 - Make a button to expand and close the above div.todo-list by toggling whether or not is hidden
