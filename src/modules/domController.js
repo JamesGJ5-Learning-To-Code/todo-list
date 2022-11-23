@@ -56,6 +56,12 @@ export class DOMController {
                 deleteProjectButton.classList.add('delete-project');
                 return deleteProjectButton;
             };
+            const makeTodoListDiv = () => {
+                const todoListDiv = document.createElement('div');
+                todoListDiv.classList.add('todo-list');
+                todoListDiv.classList.add('hidden');
+                return todoListDiv;
+            };
             const makeProjectForm = (project) => {
                 const projectForm = document.createElement('form');
                 projectForm.setAttribute('data-object-id', project.objectId);
@@ -65,12 +71,15 @@ export class DOMController {
                 const soonestDueDateDiv = makeSoonestDueDateDiv();
                 const editProjectButton = makeEditProjectButton();
                 const deleteProjectButton = makeDeleteProjectButton();
+                // TODO: make button unhiding and hiding the todoListDiv
+                const todoListDiv = makeTodoListDiv();
 
                 projectForm.appendChild(titleLabel);
                 projectForm.appendChild(titleInput);
                 projectForm.appendChild(soonestDueDateDiv);
                 projectForm.appendChild(editProjectButton);
                 projectForm.appendChild(deleteProjectButton);
+                projectForm.appendChild(todoListDiv);
 
                 return projectForm;
             };
