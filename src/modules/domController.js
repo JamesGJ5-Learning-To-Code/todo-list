@@ -247,6 +247,8 @@ export class DOMController {
             };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
+            projectObject.add(newTodoItem);
+            // console.log(projectObject.todoList);
         });
     }
 }

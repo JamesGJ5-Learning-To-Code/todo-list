@@ -33,4 +33,11 @@ export class Project {
         this.nextObjectId = res + 1;
         return res;
     }
+    add(todoItem) {
+        this.todoList.push(todoItem);
+        this.sortByPriority();
+    }
+    sortByPriority() {
+        this.todoList.sort((t1, t2) => t1.priority - t2.priority);
+    }
 }
