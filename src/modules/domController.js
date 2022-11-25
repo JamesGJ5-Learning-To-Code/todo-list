@@ -254,12 +254,18 @@ export class DOMController {
                 titleInput.id = name;
                 return titleInput;
             };
+            const makeLabel = (input, text) => {
+                const label = document.createElement('label');
+                label.textContent = text;
+                label.setAttribute('for', input.id);
+                return label;
+            };
             const makeTodoItemForm = (todoItem) => {
                 const todoItemForm = document.createElement('form');
                 todoItemForm.setAttribute('data-object-id', todoItem.objectId);
 
                 const titleInput = makeTitleInput(todoItem.title, todoItem.objectId);
-                // const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
+                const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
                 // const dueDateInput = makeDueDateInput(todoItem.dueDate, todoItem.objectId);
                 // const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
                 // TODO: hide by default the below
@@ -269,7 +275,7 @@ export class DOMController {
                 // const editTodoButton = makeEditTodoButton();
                 // const deleteTodoButton = makeDeleteTodoButton();
 
-                // todoItemForm.appendChild(titleLabel);
+                todoItemForm.appendChild(titleLabel);
                 todoItemForm.appendChild(titleInput);
                 // todoItemForm.appendChild(dueDateLabel);
                 // todoItemForm.appendChild(dueDateInput);
