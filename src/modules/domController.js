@@ -252,6 +252,7 @@ export class DOMController {
                 return label;
             };
             const makeTitleInput = (title, todoItemID) => {
+                // TODO: refactor input-creating functions
                 const titleInput = document.createElement('input');
                 titleInput.value = title;
                 titleInput.disabled = true;
