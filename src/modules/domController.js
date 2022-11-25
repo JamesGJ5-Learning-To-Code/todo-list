@@ -245,27 +245,34 @@ export class DOMController {
                 });
                 return newTodoItem;
             };
-            const makeTitleInput = (title, todoItemID) => {
-                const titleInput = document.createElement('input');
-                titleInput.value = title;
-                titleInput.disabled = true;
-                const name = `todo-${todoItemID}-input`;
-                titleInput.name = name;
-                titleInput.id = name;
-                return titleInput;
-            };
             const makeLabel = (input, text) => {
                 const label = document.createElement('label');
                 label.textContent = text;
                 label.setAttribute('for', input.id);
                 return label;
             };
+            const makeTitleInput = (title, todoItemID) => {
+                const titleInput = document.createElement('input');
+                titleInput.value = title;
+                titleInput.disabled = true;
+                const name = `todo-${todoItemID}-title-input`;
+                titleInput.name = name;
+                titleInput.id = name;
+                return titleInput;
+            };
+            // const makeDescriptionInput = (description, todoItemID) => {
+            //     const descriptionInput = document.createElement('input');
+            //     descriptionInput.value = description;
+            //     descriptionInput.disabled = true;
+            //     const name = 
+            // };
             const makeTodoItemForm = (todoItem) => {
                 const todoItemForm = document.createElement('form');
                 todoItemForm.setAttribute('data-object-id', todoItem.objectId);
 
                 const titleInput = makeTitleInput(todoItem.title, todoItem.objectId);
                 const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
+                // TODO: enable dueDateInput and dueDateLabel
                 // const dueDateInput = makeDueDateInput(todoItem.dueDate, todoItem.objectId);
                 // const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
                 // TODO: hide by default the below
