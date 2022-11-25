@@ -245,12 +245,58 @@ export class DOMController {
                 });
                 return newTodoItem;
             };
+            const makeTitleInput = (title, todoItemID) => {
+                const titleInput = document.createElement('input');
+                titleInput.value = title;
+                titleInput.disabled = true;
+                const name = `todo-${todoItemID}-input`;
+                titleInput.name = name;
+                titleInput.id = name;
+                return titleInput;
+            };
+            const makeTodoItemForm = (todoItem) => {
+                const todoItemForm = document.createElement('form');
+                todoItemForm.setAttribute('data-object-id', todoItem.objectId);
+
+                const titleInput = makeTitleInput(todoItem.title, todoItem.objectId);
+                // const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
+                // const dueDateInput = makeDueDateInput(todoItem.dueDate, todoItem.objectId);
+                // const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
+                // TODO: hide by default the below
+                // TODO: make a toggle button to change whether the below is shown
+                // const descriptionInput = makeDescriptionInput(todoItem.description, todoItem.objectId);
+                // const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
+                // const editTodoButton = makeEditTodoButton();
+                // const deleteTodoButton = makeDeleteTodoButton();
+
+                // todoItemForm.appendChild(titleLabel);
+                todoItemForm.appendChild(titleInput);
+                // todoItemForm.appendChild(dueDateLabel);
+                // todoItemForm.appendChild(dueDateInput);
+                // todoItemForm.appendChild(descriptionLabel);
+                // todoItemForm.appendChild(descriptionInput);
+                // todoItemForm.appendChild(editTodoButton);
+                // todoItemForm.appendChild(deleteTodoButton);
+            };
+            // const displayTodo = (todoItem, index) => {
+            //     const todoListDiv = this.newTodoForm.parentNode.querySelector('.todo-list');
+            //     if (todoListDiv.childElementCount === 0) {
+            //         todoListDiv.appendChild(todoItem);
+            //     } else {
+            //         todoListDiv.insertBefore(
+            //             todoItem,
+            //             todoListDiv.childNodes[index]
+            //         );
+            //     };
+            // };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
             projectObject.add(newTodoItem);
-            // console.log(projectObject.todoList);
-            const TodoItemIndex = projectObject.getIndex(newTodoItem.objectId);
-            // console.log(TodoItemIndex);
+            const todoItemForm = makeTodoItemForm(newTodoItem);
+            // displayTodo(
+            //     newTodoItem,
+            //     projectObject.getIndex(newTodoItem.objectId)
+            // );
         });
     }
 }
