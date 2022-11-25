@@ -260,12 +260,15 @@ export class DOMController {
                 titleInput.id = name;
                 return titleInput;
             };
-            // const makeDescriptionInput = (description, todoItemID) => {
-            //     const descriptionInput = document.createElement('input');
-            //     descriptionInput.value = description;
-            //     descriptionInput.disabled = true;
-            //     const name = 
-            // };
+            const makeDescriptionInput = (description, todoItemID) => {
+                const descriptionInput = document.createElement('input');
+                descriptionInput.value = description;
+                descriptionInput.disabled = true;
+                const name = `todo-${todoItemID}-description-input`;
+                descriptionInput.name = name;
+                descriptionInput.id = name;
+                return descriptionInput;
+            };
             const makeTodoItemForm = (todoItem) => {
                 const todoItemForm = document.createElement('form');
                 todoItemForm.setAttribute('data-object-id', todoItem.objectId);
@@ -277,8 +280,8 @@ export class DOMController {
                 // const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
                 // TODO: hide by default the below
                 // TODO: make a toggle button to change whether the below is shown
-                // const descriptionInput = makeDescriptionInput(todoItem.description, todoItem.objectId);
-                // const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
+                const descriptionInput = makeDescriptionInput(todoItem.description, todoItem.objectId);
+                const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
                 // const editTodoButton = makeEditTodoButton();
                 // const deleteTodoButton = makeDeleteTodoButton();
 
@@ -286,8 +289,8 @@ export class DOMController {
                 todoItemForm.appendChild(titleInput);
                 // todoItemForm.appendChild(dueDateLabel);
                 // todoItemForm.appendChild(dueDateInput);
-                // todoItemForm.appendChild(descriptionLabel);
-                // todoItemForm.appendChild(descriptionInput);
+                todoItemForm.appendChild(descriptionLabel);
+                todoItemForm.appendChild(descriptionInput);
                 // todoItemForm.appendChild(editTodoButton);
                 // todoItemForm.appendChild(deleteTodoButton);
             };
