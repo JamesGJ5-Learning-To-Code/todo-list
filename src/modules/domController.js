@@ -249,6 +249,8 @@ export class DOMController {
             const newTodoItem = makeTodoItem(projectObject);
             projectObject.add(newTodoItem);
             // console.log(projectObject.todoList);
+            const TodoItemIndex = projectObject.getIndex(newTodoItem.objectId);
+            // console.log(TodoItemIndex);
         });
     }
 }

@@ -40,4 +40,10 @@ export class Project {
     sortByPriority() {
         this.todoList.sort((t1, t2) => t1.priority - t2.priority);
     }
+    getIndex(todoItemID) {
+        const index = this.todoList.findIndex(todoItem => {
+            return todoItem.objectId === todoItemID;
+        });
+        return index;
+    }
 }
