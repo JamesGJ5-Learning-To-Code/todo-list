@@ -293,26 +293,28 @@ export class DOMController {
                 todoItemForm.appendChild(descriptionInput);
                 // todoItemForm.appendChild(editTodoButton);
                 // todoItemForm.appendChild(deleteTodoButton);
+
+                return todoItemForm;
             };
-            // const displayTodo = (todoItem, index) => {
-            //     const todoListDiv = this.newTodoForm.parentNode.querySelector('.todo-list');
-            //     if (todoListDiv.childElementCount === 0) {
-            //         todoListDiv.appendChild(todoItem);
-            //     } else {
-            //         todoListDiv.insertBefore(
-            //             todoItem,
-            //             todoListDiv.childNodes[index]
-            //         );
-            //     };
-            // };
+            const displayTodo = (todoItemForm, index) => {
+                const todoListDiv = this.newTodoForm.parentNode.querySelector('.todo-list');
+                if (todoListDiv.childElementCount === 0) {
+                    todoListDiv.appendChild(todoItemForm);
+                } else {
+                    todoListDiv.insertBefore(
+                        todoItemForm,
+                        todoListDiv.childNodes[index]
+                    );
+                };
+            };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
             projectObject.add(newTodoItem);
             const todoItemForm = makeTodoItemForm(newTodoItem);
-            // displayTodo(
-            //     newTodoItem,
-            //     projectObject.getIndex(newTodoItem.objectId)
-            // );
+            displayTodo(
+                todoItemForm,
+                projectObject.getIndex(newTodoItem.objectId)
+            );
         });
     }
 }
