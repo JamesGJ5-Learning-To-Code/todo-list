@@ -133,9 +133,9 @@ DONE button.toggle-todo-list
 
 
 2. If a project is expanded by clicking on it, you see a list of TODOs, with a button (button.createTodo) at the top for adding a new TODO. This should be made dynamically. Within each TODO you see:
-- i) todoObject.title
-- ii) todoObject.description (WHEN EXPANDED)
-- iii) todoObject.dueDate
+- i) DONE todoObject.title
+- ii) DONE todoObject.description
+- iii) DONE todoObject.dueDate
 - iv) button.edit-todo
 - v) button.delete-todo
 - vi) button.toggle-todo
@@ -150,7 +150,7 @@ button.create-todo
 --- b) DONE Puts the TodoItem object in its correct place in Project.todoList, afterwards sorting said list by priority (will have to draw inspiration from 
 the methods in AllProjects and recreate them in Project)
 --- c) DONE Finds the new index of said TodoItem (look up via todoID, will have to put a method in Project that allows this like in AllProjects)
---- d) Creates a todoItemForm (containing with title, dueDate, description (add TODO to hide it by default, and add TODO to make button.toggle-todo that toggles whether it is shown), button.edit-todo and button.delete-todo) with data-object-id as the string of the TodoItem's objectId
+--- d) Creates a todoItemForm (containing with title, dueDate, description, button.edit-todo and button.delete-todo) with data-object-id as the string of the TodoItem's objectId
 --- e) Puts the todoItemForm into the correct position in the DOM
 --- f) Resets #new-todo-form (like in the reset() in the 'newProjectForm button' event listener)
 

@@ -269,8 +269,6 @@ export class DOMController {
                 const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
                 const dueDateInput = makeInput('date', 'due-date', todoItem.dueDate, todoItem.objectId);
                 const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
-                // TODO: hide by default the below
-                // TODO: make a toggle button to change whether the below is shown
                 const descriptionInput = makeInput('text', 'description', todoItem.description, todoItem.objectId);
                 const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
                 // const editTodoButton = makeEditTodoButton();
