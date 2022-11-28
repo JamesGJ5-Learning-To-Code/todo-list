@@ -245,11 +245,12 @@ export class DOMController {
                 });
                 return newTodoItem;
             };
-            const makeInput = (attribute, value, todoItemId) => {
+            const makeInput = (inputType, todoAttribute, todoAttributeValue, todoItemId) => {
                 const input = document.createElement('input');
-                input.value = value;
+                input.type = inputType;
+                input.value = todoAttributeValue;
                 input.disabled = true;
-                const inputName = `todo-${todoItemId}-${attribute}-input`;
+                const inputName = `todo-${todoItemId}-${todoAttribute}-input`;
                 input.name = inputName;
                 input.id = inputName;
                 return input;
@@ -264,22 +265,21 @@ export class DOMController {
                 const todoItemForm = document.createElement('form');
                 todoItemForm.setAttribute('data-object-id', todoItem.objectId);
 
-                const titleInput = makeInput('title', todoItem.title, todoItem.objectId);
+                const titleInput = makeInput('text', 'title', todoItem.title, todoItem.objectId);
                 const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
-                // TODO: enable dueDateInput and dueDateLabel
-                // const dueDateInput = makeDueDateInput(todoItem.dueDate, todoItem.objectId);
-                // const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
+                const dueDateInput = makeInput('date', 'due-date', todoItem.dueDate, todoItem.objectId);
+                const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
                 // TODO: hide by default the below
                 // TODO: make a toggle button to change whether the below is shown
-                const descriptionInput = makeInput('description', todoItem.description, todoItem.objectId);
+                const descriptionInput = makeInput('text', 'description', todoItem.description, todoItem.objectId);
                 const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
                 // const editTodoButton = makeEditTodoButton();
                 // const deleteTodoButton = makeDeleteTodoButton();
 
                 todoItemForm.appendChild(titleLabel);
                 todoItemForm.appendChild(titleInput);
-                // todoItemForm.appendChild(dueDateLabel);
-                // todoItemForm.appendChild(dueDateInput);
+                todoItemForm.appendChild(dueDateLabel);
+                todoItemForm.appendChild(dueDateInput);
                 todoItemForm.appendChild(descriptionLabel);
                 todoItemForm.appendChild(descriptionInput);
                 // todoItemForm.appendChild(editTodoButton);
