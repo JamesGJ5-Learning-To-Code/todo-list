@@ -38,7 +38,7 @@ export class Project {
         this.sortByPriority();
     }
     sortByPriority() {
-        this.todoList.sort((t1, t2) => t1.priority - t2.priority);
+        this.todoList.sort((t1, t2) => t2.priority - t1.priority);
     }
     getIndex(todoItemID) {
         const index = this.todoList.findIndex(todoItem => {

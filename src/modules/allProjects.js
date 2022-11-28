@@ -18,7 +18,7 @@ export class AllProjects {
         // console.log(this.projectList);
     }
     sortByPriority() {
-        this.projectList.sort((p1, p2) => p1.priority - p2.priority);
+        this.projectList.sort((p1, p2) => p2.priority - p1.priority);
     }
     getIndex(projectID) {
         const index = this.projectList.findIndex(project => {
