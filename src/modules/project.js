@@ -35,6 +35,7 @@ export class Project {
     }
     add(todoItem) {
         this.todoList.push(todoItem);
+        todoItem.parentProject = this;
         this.sortByPriority();
     }
     sortByPriority() {

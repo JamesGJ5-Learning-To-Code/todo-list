@@ -405,6 +405,7 @@ export class DOMController {
                     const projectObject = getProject();
                     const todoItemIndex = projectObject.getIndex(todoItemID);
                     const todoItem = projectObject.todoList[todoItemIndex];
+                    // console.log(projectObject.todoList);
                     return todoItem;
                 };
                 const editTodo = (todoItemObject) => {

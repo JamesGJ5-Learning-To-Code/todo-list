@@ -5,6 +5,7 @@ export class TodoItem {
         this.dueDate = dueDate;
         this.description = description;
         this.objectId = objectId;
+        this.parentProject = undefined;
     }
     set dueDate(value) {
         this._dueDate = value;
@@ -24,6 +25,9 @@ export class TodoItem {
         };
         const dateNumber = toNumber(value)
         this._priority = -dateNumber;
+        // TODO: later, only do this if the todo is now in the wrong place, and 
+        // do this via binary search for the new place, not sorting
+        if (this.parentProject) {this.parentProject.sortByPriority();}
     }
     get priority() {
         return this._priority;
