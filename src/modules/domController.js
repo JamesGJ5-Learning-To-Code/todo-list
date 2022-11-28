@@ -253,6 +253,7 @@ export class DOMController {
                 const inputName = `todo-${todoItemId}-${todoAttribute}-input`;
                 input.name = inputName;
                 input.id = inputName;
+                input.setAttribute('data-attribute', todoAttribute);
                 return input;
             };
             const makeLabel = (input, text) => {
@@ -281,7 +282,7 @@ export class DOMController {
 
                 const titleInput = makeInput('text', 'title', todoItem.title, todoItem.objectId);
                 const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
-                const dueDateInput = makeInput('date', 'due-date', todoItem.dueDate, todoItem.objectId);
+                const dueDateInput = makeInput('date', 'dueDate', todoItem.dueDate, todoItem.objectId);
                 const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
                 const descriptionInput = makeInput('text', 'description', todoItem.description, todoItem.objectId);
                 const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
@@ -391,9 +392,16 @@ export class DOMController {
                     const todoItem = projectObject.todoList[todoItemIndex];
                     return todoItem;
                 };
+                // const editTodo = (todoItemObject) => {
+                //     const inputList = e.target.parentNode.querySelectorAll('input');
+                //     inputList.forEach((input) => {
+                //         switch 
+                //     });
+                // };
                 const todoItemID = getTodoItemID();
                 const todoItemObject = getTodoItem(todoItemID);
                 // console.log(todoItemObject);
+                // editTodo(todoItemObject);
             };
         });
     }
