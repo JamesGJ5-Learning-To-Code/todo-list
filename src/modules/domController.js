@@ -392,16 +392,19 @@ export class DOMController {
                     const todoItem = projectObject.todoList[todoItemIndex];
                     return todoItem;
                 };
-                // const editTodo = (todoItemObject) => {
-                //     const inputList = e.target.parentNode.querySelectorAll('input');
-                //     inputList.forEach((input) => {
-                //         switch 
-                //     });
-                // };
+                const editTodo = (todoItemObject) => {
+                    const inputList = e.target.parentNode.querySelectorAll('input');
+                    inputList.forEach((input) => {
+                        const dataAttribute = input.getAttribute('data-attribute');
+                        todoItemObject[dataAttribute] = input.value;
+                        input.disabled = true;
+                    });
+                };
                 const todoItemID = getTodoItemID();
                 const todoItemObject = getTodoItem(todoItemID);
                 // console.log(todoItemObject);
-                // editTodo(todoItemObject);
+                editTodo(todoItemObject);
+                // console.log(todoItemObject);
             };
         });
     }
