@@ -76,7 +76,7 @@ ADDED TO CLASS CONSTRUCTOR
 - Stores TODOs
 - Properties:
 - i) DONE todoList (a list of references to todoItem objects in this project)
--- LATER, consider using a heap for efficient list reordering when adding etc.
+-- LATER, consider using a binary search for efficiently adding to the list.
 -- References to todoItem objects with higher priorities come earlier in the list
 - ii) DONE nextObjectId
 - iii) DONE title
@@ -88,7 +88,7 @@ ADDED TO CLASS CONSTRUCTOR
 - Stores projects
 - Properties:
 - i) DONE projectList (a list of references to project objects)
--- LATER, consider using a heap for efficient list reordering when adding etc.
+-- LATER, consider using a binary search for efficiently adding to the list.
 -- References to project objects with higher priorities come earlier in the list
 - ii) DONE nextObjectId
 
