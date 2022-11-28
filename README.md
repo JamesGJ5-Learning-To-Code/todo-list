@@ -162,9 +162,9 @@ button.delete-todo
 
 button.edit-todo
 - Clicking this should:
--- i) Make the inputs editable
--- ii) Bring up the same button.submit-todo as is mentioned above
--- iii) Edit the todo object itself in project.todoList
+-- i) DONE Make the inputs editable
+-- ii) DONE Bring up the same button.submit-todo as is mentioned above
+-- iii) DONE Edit the todo object itself in project.todoList
 -- iv) If a todo's priority changes such that the following is necessitated then:
 --- a) Move it to its correct new position in project.todoList
 --- b) Move it to its correct new position in the DOM
