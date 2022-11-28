@@ -47,4 +47,10 @@ export class Project {
         });
         return index;
     }
+    // remove(index) {
+    //     this.projectList.splice(index, 1);
+    // }
+    remove(index) {
+        this.todoList.splice(index, 1);
+    }
 }

@@ -428,19 +428,31 @@ export class DOMController {
         //         removeProject();
         //     };
         // });
-        // this.allProjectsDiv.addEventListener('click', (e) => {
-        //     if (e.target && e.target.classList.contains('delete-todo')) {
-        //         const removeInternally = (todoItemForm) => {
-        //             const todoItemID = parseInt(todoItemForm.getAttribute('data-object-id'));
-
-        //         };
-        //         const removeProject = () => {
-        //             const todoItemForm = e.target.parentNode;
-        //             removeInternally(todoItemForm);
-        //             removeFromDOM(todoItemForm);
-        //         };
-        //         removeProject();
-        //     };
-        // });
+        this.allProjectsDiv.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('delete-todo')) {
+                const getProject = () => {
+                    const projectForm = e.target.parentNode.parentNode.parentNode;
+                    const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+                    // console.log(projectID);
+                    const projectIndex = this.allProjects.getIndex(projectID);
+                    // console.log(projectIndex);
+                    const projectObject = this.allProjects.projectList[projectIndex];
+                    return projectObject;
+                };
+                const removeInternally = (todoItemForm) => {
+                    const todoItemID = parseInt(todoItemForm.getAttribute('data-object-id'));
+                    const parentProject = getProject();
+                    const index = parentProject.getIndex(todoItemID);
+                    parentProject.remove(index);
+                    console.log(parentProject.todoList);
+                };
+                const removeTodo = () => {
+                    const todoItemForm = e.target.parentNode;
+                    removeInternally(todoItemForm);
+                    // removeFromDOM(todoItemForm);
+                };
+                removeTodo();
+            };
+        });
     }
 }
