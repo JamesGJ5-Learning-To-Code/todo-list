@@ -348,6 +348,9 @@ export class DOMController {
                     const todoItemForm = e.target.parentNode;
                     todoItemForm.appendChild(submitEditButton);
                 };
+                if (e.target.parentNode.querySelector('.submit-edit-todo')) {
+                    return;
+                };
                 enableInputs();
                 displaySubmitEditButton();
             };
