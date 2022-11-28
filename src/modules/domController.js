@@ -410,11 +410,15 @@ export class DOMController {
                         input.disabled = true;
                     });
                 };
+                const removeSubmitEditButton = () => {
+                    e.target.remove();
+                };
                 const todoItemID = getTodoItemID();
                 const todoItemObject = getTodoItem(todoItemID);
                 // console.log(todoItemObject);
                 editTodo(todoItemObject);
                 // console.log(todoItemObject);
+                removeSubmitEditButton();
             };
         });
     }
