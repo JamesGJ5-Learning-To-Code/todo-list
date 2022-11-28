@@ -444,12 +444,15 @@ export class DOMController {
                     const parentProject = getProject();
                     const index = parentProject.getIndex(todoItemID);
                     parentProject.remove(index);
-                    console.log(parentProject.todoList);
+                    // console.log(parentProject.todoList);
+                };
+                const removeFromDOM = (todoItemForm) => {
+                    todoItemForm.remove();
                 };
                 const removeTodo = () => {
                     const todoItemForm = e.target.parentNode;
                     removeInternally(todoItemForm);
-                    // removeFromDOM(todoItemForm);
+                    removeFromDOM(todoItemForm);
                 };
                 removeTodo();
             };
