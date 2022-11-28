@@ -378,7 +378,22 @@ export class DOMController {
                     const todoItemID = parseInt(todoItemForm.getAttribute('data-object-id'));
                     return todoItemID;
                 };
+                const getProject = () => {
+                    const projectForm = e.target.parentNode.parentNode.parentNode;
+                    const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+                    const projectIndex = this.allProjects.getIndex(projectID);
+                    const projectObject = this.allProjects.projectList[projectIndex];
+                    return projectObject;
+                };
+                const getTodoItem = (todoItemID) => {
+                    const projectObject = getProject();
+                    const todoItemIndex = projectObject.getIndex(todoItemID);
+                    const todoItem = projectObject.todoList[todoItemIndex];
+                    return todoItem;
+                };
                 const todoItemID = getTodoItemID();
+                const todoItemObject = getTodoItem(todoItemID);
+                // console.log(todoItemObject);
             };
         });
     }
