@@ -142,9 +142,14 @@ export class DOMController {
                     return submitEditButton;
                 };
                 const displaySubmitEditButton = () => {
+                    const insertButton = (button, projectForm) => {
+                        const soonestDueDateDiv = document.querySelector('.soonest-due-date');
+                        projectForm.insertBefore(button, soonestDueDateDiv.nextElementSibling);
+                    };
                     const submitEditButton = makeSubmitEditButton();
                     const projectForm = e.target.parentNode;
-                    projectForm.appendChild(submitEditButton);
+                    // projectForm.appendChild(submitEditButton);
+                    insertButton(submitEditButton, projectForm);
                 };
                 if (e.target.parentNode.querySelector('.submit-edit-project')) {
                     return;
