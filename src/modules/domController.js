@@ -245,43 +245,33 @@ export class DOMController {
                 });
                 return newTodoItem;
             };
+            const makeInput = (attribute, value, todoItemId) => {
+                const input = document.createElement('input');
+                input.value = value;
+                input.disabled = true;
+                const inputName = `todo-${todoItemId}-${attribute}-input`;
+                input.name = inputName;
+                input.id = inputName;
+                return input;
+            };
             const makeLabel = (input, text) => {
                 const label = document.createElement('label');
                 label.textContent = text;
                 label.setAttribute('for', input.id);
                 return label;
             };
-            const makeTitleInput = (title, todoItemID) => {
-                // TODO: refactor input-creating functions
-                const titleInput = document.createElement('input');
-                titleInput.value = title;
-                titleInput.disabled = true;
-                const name = `todo-${todoItemID}-title-input`;
-                titleInput.name = name;
-                titleInput.id = name;
-                return titleInput;
-            };
-            const makeDescriptionInput = (description, todoItemID) => {
-                const descriptionInput = document.createElement('input');
-                descriptionInput.value = description;
-                descriptionInput.disabled = true;
-                const name = `todo-${todoItemID}-description-input`;
-                descriptionInput.name = name;
-                descriptionInput.id = name;
-                return descriptionInput;
-            };
             const makeTodoItemForm = (todoItem) => {
                 const todoItemForm = document.createElement('form');
                 todoItemForm.setAttribute('data-object-id', todoItem.objectId);
 
-                const titleInput = makeTitleInput(todoItem.title, todoItem.objectId);
+                const titleInput = makeInput('title', todoItem.title, todoItem.objectId);
                 const titleLabel = makeLabel(titleInput, 'Todo Item Title: ');
                 // TODO: enable dueDateInput and dueDateLabel
                 // const dueDateInput = makeDueDateInput(todoItem.dueDate, todoItem.objectId);
                 // const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
                 // TODO: hide by default the below
                 // TODO: make a toggle button to change whether the below is shown
-                const descriptionInput = makeDescriptionInput(todoItem.description, todoItem.objectId);
+                const descriptionInput = makeInput('description', todoItem.description, todoItem.objectId);
                 const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
                 // const editTodoButton = makeEditTodoButton();
                 // const deleteTodoButton = makeDeleteTodoButton();
@@ -311,7 +301,7 @@ export class DOMController {
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
             projectObject.add(newTodoItem);
-            console.log(projectObject.todoList);
+            // console.log(projectObject.todoList);
             const todoItemForm = makeTodoItemForm(newTodoItem);
             displayTodo(
                 todoItemForm,
