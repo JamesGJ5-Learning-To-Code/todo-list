@@ -193,7 +193,9 @@ export class DOMController {
             if (e.target && e.target.classList.contains('delete-project')) {
                 const removeInternally = (projectForm) => {
                     const projectID = parseInt(projectForm.getAttribute('data-object-id'));
-                    allProjects.remove(projectID);
+                    const index = allProjects.getIndex(projectID);
+                    allProjects.remove(index);
+                    console.log(allProjects.projectList);
                 };
                 const removeFromDOM = (projectForm) => {
                     projectForm.remove();
@@ -360,33 +362,6 @@ export class DOMController {
                 displaySubmitEditButton();
             };
         });
-                // this.allProjectsDiv.addEventListener('click', (e) => {
-        //     if (e.target && e.target.classList.contains('submit-edit-project')) {
-        //         // Find project in allProjects.projectList using data-object-id
-        //         // Use value of titleInput and set it as new title of project
-        //         // Disable titleInput
-        //         const getProjectID = () => {
-        //             const projectForm = e.target.parentNode;
-        //             const projectID = parseInt(projectForm.getAttribute('data-object-id'));
-        //             return projectID;
-        //         };
-        //         const getProject = (projectID) => {
-        //             const index = this.allProjects.getIndex(projectID);
-
-        //             const project = this.allProjects.projectList[index];
-        //             return project;
-        //         };
-        //         const editProject = (project) => {
-        //             // TODO: select the below via its ID
-        //             const titleInput = e.target.parentNode.querySelector('input');
-        //             project.title = titleInput.value;
-        //             titleInput.disabled = true;
-        //         };
-        //         const projectID = getProjectID();
-        //         const project = getProject(projectID);
-        //         editProject(project);
-        //     };
-        // });
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('submit-edit-todo')) {
                 const getTodoItemID = () => {
@@ -436,5 +411,36 @@ export class DOMController {
                 removeSubmitEditButton();
             };
         });
+        // this.allProjectsDiv.addEventListener('click', (e) => {
+        //     if (e.target && e.target.classList.contains('delete-project')) {
+        //         const removeInternally = (projectForm) => {
+        //             const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+        //             allProjects.remove(projectID);
+        //         };
+        //         const removeFromDOM = (projectForm) => {
+        //             projectForm.remove();
+        //         };
+        //         const removeProject = () => {
+        //             const projectForm = e.target.parentNode
+        //             removeInternally(projectForm);
+        //             removeFromDOM(projectForm);
+        //         };
+        //         removeProject();
+        //     };
+        // });
+        // this.allProjectsDiv.addEventListener('click', (e) => {
+        //     if (e.target && e.target.classList.contains('delete-todo')) {
+        //         const removeInternally = (todoItemForm) => {
+        //             const todoItemID = parseInt(todoItemForm.getAttribute('data-object-id'));
+
+        //         };
+        //         const removeProject = () => {
+        //             const todoItemForm = e.target.parentNode;
+        //             removeInternally(todoItemForm);
+        //             removeFromDOM(todoItemForm);
+        //         };
+        //         removeProject();
+        //     };
+        // });
     }
 }
