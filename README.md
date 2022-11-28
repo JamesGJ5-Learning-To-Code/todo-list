@@ -161,7 +161,7 @@ button.delete-todo
 -- iii) button.edit-todo
 
 button.edit-todo
-- Clicking this should:
+- DONE Clicking this should:
 -- i) DONE Make the inputs editable
 -- ii) DONE Bring up the same button.submit-todo as is mentioned above
 -- iii) DONE Edit the todo object itself in project.todoList
@@ -169,10 +169,6 @@ button.edit-todo
 --- a) DONE Move it to its correct new position in project.todoList
 --- b) DONE Move it to its correct new position in the DOM
 -- LATER: allow user to click "cancel" if they don't want to save their changes
-
-button.toggle-todo
-- Clicking this should:
--- i) Toggle whether each of the TODOs is expanded (unhidden) or not, by toggling class of "hidden" accordingly
 
 # Notes
 
