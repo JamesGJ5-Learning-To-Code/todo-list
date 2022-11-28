@@ -261,6 +261,13 @@ export class DOMController {
                 label.setAttribute('for', input.id);
                 return label;
             };
+            const makeEditTodoButton = () => {
+                const editTodoButton = document.createElement('button');
+                editTodoButton.type = 'button';
+                editTodoButton.textContent = 'Edit Todo';
+                editTodoButton.classList.add('edit-todo');
+                return editTodoButton;
+            };
             const makeTodoItemForm = (todoItem) => {
                 const todoItemForm = document.createElement('form');
                 todoItemForm.setAttribute('data-object-id', todoItem.objectId);
@@ -271,7 +278,7 @@ export class DOMController {
                 const dueDateLabel = makeLabel(dueDateInput, 'Due Date: ');
                 const descriptionInput = makeInput('text', 'description', todoItem.description, todoItem.objectId);
                 const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
-                // const editTodoButton = makeEditTodoButton();
+                const editTodoButton = makeEditTodoButton();
                 // const deleteTodoButton = makeDeleteTodoButton();
 
                 todoItemForm.appendChild(titleLabel);
@@ -280,7 +287,7 @@ export class DOMController {
                 todoItemForm.appendChild(dueDateInput);
                 todoItemForm.appendChild(descriptionLabel);
                 todoItemForm.appendChild(descriptionInput);
-                // todoItemForm.appendChild(editTodoButton);
+                todoItemForm.appendChild(editTodoButton);
                 // todoItemForm.appendChild(deleteTodoButton);
 
                 return todoItemForm;
