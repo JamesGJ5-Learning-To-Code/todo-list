@@ -146,6 +146,9 @@ export class DOMController {
                     const projectForm = e.target.parentNode;
                     projectForm.appendChild(submitEditButton);
                 };
+                // if (e.target.parentNode.querySelector('.submit-edit-project')) {
+                //     return;
+                // };
                 enableTitleInput();
                 displaySubmitEditButton();
             };
@@ -172,9 +175,13 @@ export class DOMController {
                     project.title = titleInput.value;
                     titleInput.disabled = true;
                 };
+                const removeSubmitEditButton = () => {
+                    e.target.remove();
+                };
                 const projectID = getProjectID();
                 const project = getProject(projectID);
                 editProject(project);
+                removeSubmitEditButton();
             };
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
