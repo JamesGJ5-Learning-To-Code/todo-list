@@ -268,6 +268,13 @@ export class DOMController {
                 editTodoButton.classList.add('edit-todo');
                 return editTodoButton;
             };
+            const makeDeleteTodoButton = () => {
+                const deleteTodoButton = document.createElement('button');
+                deleteTodoButton.type = 'button';
+                deleteTodoButton.textContent = 'Delete Todo';
+                deleteTodoButton.classList.add('delete-todo');
+                return deleteTodoButton;
+            };
             const makeTodoItemForm = (todoItem) => {
                 const todoItemForm = document.createElement('form');
                 todoItemForm.setAttribute('data-object-id', todoItem.objectId);
@@ -279,7 +286,7 @@ export class DOMController {
                 const descriptionInput = makeInput('text', 'description', todoItem.description, todoItem.objectId);
                 const descriptionLabel = makeLabel(descriptionInput, 'Description: ');
                 const editTodoButton = makeEditTodoButton();
-                // const deleteTodoButton = makeDeleteTodoButton();
+                const deleteTodoButton = makeDeleteTodoButton();
 
                 todoItemForm.appendChild(titleLabel);
                 todoItemForm.appendChild(titleInput);
@@ -288,7 +295,7 @@ export class DOMController {
                 todoItemForm.appendChild(descriptionLabel);
                 todoItemForm.appendChild(descriptionInput);
                 todoItemForm.appendChild(editTodoButton);
-                // todoItemForm.appendChild(deleteTodoButton);
+                todoItemForm.appendChild(deleteTodoButton);
 
                 return todoItemForm;
             };
