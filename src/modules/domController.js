@@ -138,7 +138,7 @@ export class DOMController {
                     const submitEditButton = document.createElement('button');
                     submitEditButton.type = 'button';
                     submitEditButton.textContent = 'Submit';
-                    submitEditButton.classList.add('submit-edit');
+                    submitEditButton.classList.add('submit-edit-project');
                     return submitEditButton;
                 };
                 const displaySubmitEditButton = () => {
@@ -151,7 +151,7 @@ export class DOMController {
             };
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
-            if (e.target && e.target.classList.contains('submit-edit')) {
+            if (e.target && e.target.classList.contains('submit-edit-project')) {
                 // Find project in allProjects.projectList using data-object-id
                 // Use value of titleInput and set it as new title of project
                 // Disable titleInput
@@ -329,7 +329,7 @@ export class DOMController {
         //     const submitEditButton = document.createElement('button');
         //     submitEditButton.type = 'button';
         //     submitEditButton.textContent = 'Submit';
-        //     submitEditButton.classList.add('submit-edit');
+        //     submitEditButton.classList.add('submit-edit-project');
         //     return submitEditButton;
         // };
         // const displaySubmitEditButton = () => {
@@ -347,7 +347,20 @@ export class DOMController {
                         input.disabled = false;
                     });
                 };
+                const makeSubmitEditButton = () => {
+                    const submitEditButton = document.createElement('button');
+                    submitEditButton.type = 'button';
+                    submitEditButton.textContent = 'Submit';
+                    submitEditButton.classList.add('submit-edit-todo');
+                    return submitEditButton;
+                };
+                const displaySubmitEditButton = () => {
+                    const submitEditButton = makeSubmitEditButton();
+                    const todoItemForm = e.target.parentNode;
+                    todoItemForm.appendChild(submitEditButton);
+                };
                 enableInputs();
+                displaySubmitEditButton();
             };
         });
     }
