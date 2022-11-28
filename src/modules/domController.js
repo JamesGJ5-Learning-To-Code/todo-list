@@ -146,9 +146,9 @@ export class DOMController {
                     const projectForm = e.target.parentNode;
                     projectForm.appendChild(submitEditButton);
                 };
-                // if (e.target.parentNode.querySelector('.submit-edit-project')) {
-                //     return;
-                // };
+                if (e.target.parentNode.querySelector('.submit-edit-project')) {
+                    return;
+                };
                 enableTitleInput();
                 displaySubmitEditButton();
             };
