@@ -325,6 +325,10 @@ export class DOMController {
                     );
                 };
             };
+            const resetNewTodoForm = () => {
+                this.newTodoForm.reset();
+                this.newTodoForm.classList.add('hidden');
+            };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
             projectObject.add(newTodoItem);
@@ -334,6 +338,7 @@ export class DOMController {
                 todoItemForm,
                 projectObject.getIndex(newTodoItem.objectId)
             );
+            resetNewTodoForm();
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('edit-todo')) {
@@ -454,6 +459,7 @@ export class DOMController {
                     removeInternally(todoItemForm);
                     removeFromDOM(todoItemForm);
                 };
+
                 removeTodo();
             };
         });
