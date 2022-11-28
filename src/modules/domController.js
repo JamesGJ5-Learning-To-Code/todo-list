@@ -320,5 +320,35 @@ export class DOMController {
                 projectObject.getIndex(newTodoItem.objectId)
             );
         });
+        // const enableTitleInput = () => {
+        //     // TODO: select the below via its ID
+        //     const titleInput = e.target.parentNode.querySelector('input');
+        //     titleInput.disabled = false;
+        // };
+        // const makeSubmitEditButton = () => {
+        //     const submitEditButton = document.createElement('button');
+        //     submitEditButton.type = 'button';
+        //     submitEditButton.textContent = 'Submit';
+        //     submitEditButton.classList.add('submit-edit');
+        //     return submitEditButton;
+        // };
+        // const displaySubmitEditButton = () => {
+        //     const submitEditButton = makeSubmitEditButton();
+        //     const projectForm = e.target.parentNode;
+        //     projectForm.appendChild(submitEditButton);
+        // };
+        // enableTitleInput();
+        // displaySubmitEditButton();
+        this.allProjectsDiv.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains('edit-todo')) {
+                const enableInputs = () => {
+                    const inputs = e.target.parentNode.querySelectorAll('input');
+                    inputs.forEach((input) => {
+                        input.disabled = false;
+                    });
+                };
+                enableInputs();
+            };
+        });
     }
 }
