@@ -8,13 +8,22 @@ export class TodoItem {
     }
     set dueDate(value) {
         this._dueDate = value;
-        this.priority = (value) ? -value : -Infinity;
+        // value is a string so priority() setter will turn it into a number so 
+        // the negative of it can be calculated
+        this.priority = (value) ? value : -Infinity;
     }
     get dueDate() {
         return this._dueDate;
     }
     set priority(value) {
-        this._priority = value;
+        const toNumber = (dateString) => {
+            // dateString should be of the format "YYYY-MM-DD" (A.D., no negative 
+            // years)
+            const res = parseInt(dateString.replace('-', '').replace('-', ''));
+            return res;
+        };
+        const dateNumber = toNumber(value)
+        this._priority = -dateNumber;
     }
     get priority() {
         return this._priority;
