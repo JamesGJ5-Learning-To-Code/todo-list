@@ -401,8 +401,8 @@ export class DOMController {
                     const projectObject = this.allProjects.projectList[projectIndex];
                     return projectObject;
                 };
-                const getTodoItem = (todoItemID) => {
-                    const projectObject = getProject();
+                const getTodoItem = (projectObject, todoItemID) => {
+                    // const projectObject = getProject();
                     const todoItemIndex = projectObject.getIndex(todoItemID);
                     const todoItem = projectObject.todoList[todoItemIndex];
                     // console.log(projectObject.todoList);
@@ -416,14 +416,23 @@ export class DOMController {
                         input.disabled = true;
                     });
                 };
+                const updateDOMPosition = (todoItemID, projectObject) => {
+                    const todoItemForm = e.target.parentNode;
+                    const todoListDiv = e.target.parentNode.parentNode;
+
+                    const todoItemIndex = projectObject.getIndex(todoItemID);
+                    todoListDiv.insertBefore(todoItemForm, todoListDiv.childNodes[todoItemIndex]);
+                };
                 const removeSubmitEditButton = () => {
                     e.target.remove();
                 };
                 const todoItemID = getTodoItemID();
-                const todoItemObject = getTodoItem(todoItemID);
+                const projectObject = getProject();
+                const todoItemObject = getTodoItem(projectObject, todoItemID);
                 // console.log(todoItemObject);
                 editTodo(todoItemObject);
                 // console.log(todoItemObject);
+                updateDOMPosition(todoItemID, projectObject);
                 removeSubmitEditButton();
             };
         });

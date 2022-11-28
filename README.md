@@ -166,7 +166,7 @@ button.edit-todo
 -- ii) DONE Bring up the same button.submit-todo as is mentioned above
 -- iii) DONE Edit the todo object itself in project.todoList
 -- iv) If a todo's priority changes such that the following is necessitated then:
---- a) Move it to its correct new position in project.todoList
+--- a) DONE Move it to its correct new position in project.todoList
 --- b) Move it to its correct new position in the DOM
 -- LATER: allow user to click "cancel" if they don't want to save their changes
 
