@@ -416,23 +416,6 @@ export class DOMController {
                 removeSubmitEditButton();
             };
         });
-        // this.allProjectsDiv.addEventListener('click', (e) => {
-        //     if (e.target && e.target.classList.contains('delete-project')) {
-        //         const removeInternally = (projectForm) => {
-        //             const projectID = parseInt(projectForm.getAttribute('data-object-id'));
-        //             allProjects.remove(projectID);
-        //         };
-        //         const removeFromDOM = (projectForm) => {
-        //             projectForm.remove();
-        //         };
-        //         const removeProject = () => {
-        //             const projectForm = e.target.parentNode
-        //             removeInternally(projectForm);
-        //             removeFromDOM(projectForm);
-        //         };
-        //         removeProject();
-        //     };
-        // });
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('delete-todo')) {
                 const getProject = () => {
@@ -459,7 +442,6 @@ export class DOMController {
                     removeInternally(todoItemForm);
                     removeFromDOM(todoItemForm);
                 };
-
                 removeTodo();
             };
         });
