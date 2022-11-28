@@ -150,15 +150,14 @@ button.create-todo
 --- b) DONE Puts the TodoItem object in its correct place in Project.todoList, afterwards sorting said list by priority (will have to draw inspiration from 
 the methods in AllProjects and recreate them in Project)
 --- c) DONE Finds the new index of said TodoItem (look up via todoID, will have to put a method in Project that allows this like in AllProjects)
---- d) Creates a todoItemForm (containing with title, dueDate, description, button.edit-todo and button.delete-todo) with data-object-id as the string of the TodoItem's objectId
---- e) Puts the todoItemForm into the correct position in the DOM
+--- d) DONE Creates a todoItemForm (containing with title, dueDate, description, button.edit-todo and button.delete-todo) with data-object-id as the string of the TodoItem's objectId
+--- e) DONE Puts the todoItemForm into the correct position in the DOM
 --- f) Resets #new-todo-form (like in the reset() in the 'newProjectForm button' event listener)
 
 button.delete-todo
 - Clicking this should:
--- i) Remove this TODO from project.todoList
--- ii) Remove this div.todo or whatever from the DOM
--- iii) button.edit-todo
+-- i) DONE Remove this TODO from project.todoList
+-- ii) DONE Remove this div.todo or whatever from the DOM
 
 button.edit-todo
 - DONE Clicking this should:
