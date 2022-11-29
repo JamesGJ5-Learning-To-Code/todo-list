@@ -341,9 +341,20 @@ export class DOMController {
                     };
                     soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
                 };
+                const updateDOMPosition = (projectForm) => {
+                    const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+                    const index = this.allProjects.getIndex(projectID);
+                    if (this.allProjectsDiv.childElementCount >= 2) {
+                        this.allProjectsDiv.insertBefore(
+                            projectForm,
+                            this.allProjectsDiv.childNodes[index]
+                        );
+                    };
+                };
                 const projectForm = e.target.parentNode.parentNode;
                 // console.log(projectForm);
                 updateSoonestDueDateDiv(projectForm, projectObject);
+                updateDOMPosition(projectForm, projectObject);
             };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
