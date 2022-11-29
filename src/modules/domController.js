@@ -447,5 +447,13 @@ export class DOMController {
         });
         // TODO: add event listeners to aspects that change priorities, and 
         // may thus call for DOM orders to change
+        // Must do this for:
+        // - The submit button in this.newTodoForm, because that may change 
+        // Project.soonestDate and thus may require the text in 
+        // projectForm.soonestDateDiv to change and may require the position of 
+        // projectForm in this.allProjectsDiv to change.
+        // - button.delete-todo, for the same reasons as above
+        // - button.edit-todo, for the same reasons as above but also because 
+        // the position of the todoItemForm may need to change in the DOM
     }
 }
