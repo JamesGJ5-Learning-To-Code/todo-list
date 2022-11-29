@@ -237,6 +237,27 @@ export class DOMController {
                 toggleNewTodoForm();
             };
         });
+        // const updateSoonestDueDateDiv = (projectForm, projectObject) => {
+        //     const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
+        //     const soonestDueDate = projectObject.soonestDueDate;
+        //     let displayedDate;
+        //     if (soonestDueDate) {
+        //         displayedDate = soonestDueDate.toString();
+        //     } else {
+        //         displayedDate = 'N/A';
+        //     };
+        //     soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
+        // };
+        // const updateDOMPosition = (projectForm) => {
+        //     const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+        //     const index = this.allProjects.getIndex(projectID);
+        //     if (this.allProjectsDiv.childElementCount >= 2) {
+        //         this.allProjectsDiv.insertBefore(
+        //             projectForm,
+        //             this.allProjectsDiv.childNodes[index]
+        //         );
+        //     };
+        // };
         // Submit button in #new-todo-form
         this.newTodoForm.querySelector('button').addEventListener('click', (e) => {
             const getParentProject = () => {
@@ -330,31 +351,10 @@ export class DOMController {
                 this.newTodoForm.classList.add('hidden');
             };
             const updateProjectForm = (projectObject) => {
-                const updateSoonestDueDateDiv = (projectForm, projectObject) => {
-                    const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
-                    const soonestDueDate = projectObject.soonestDueDate;
-                    let displayedDate;
-                    if (soonestDueDate) {
-                        displayedDate = soonestDueDate.toString();
-                    } else {
-                        displayedDate = 'N/A';
-                    };
-                    soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
-                };
-                const updateDOMPosition = (projectForm) => {
-                    const projectID = parseInt(projectForm.getAttribute('data-object-id'));
-                    const index = this.allProjects.getIndex(projectID);
-                    if (this.allProjectsDiv.childElementCount >= 2) {
-                        this.allProjectsDiv.insertBefore(
-                            projectForm,
-                            this.allProjectsDiv.childNodes[index]
-                        );
-                    };
-                };
                 const projectForm = e.target.parentNode.parentNode;
                 // console.log(projectForm);
-                updateSoonestDueDateDiv(projectForm, projectObject);
-                updateDOMPosition(projectForm, projectObject);
+                this.updateSoonestDueDateDiv(projectForm, projectObject);
+                this.updateDOMPosition(projectForm, projectObject);
             };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
@@ -470,7 +470,52 @@ export class DOMController {
                     removeInternally(todoItemForm);
                     removeFromDOM(todoItemForm);
                 };
+                // const updateProjectForm = (projectObject) => {
+                //     const updateSoonestDueDateDiv = (projectForm, projectObject) => {
+                //         const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
+                //         const soonestDueDate = projectObject.soonestDueDate;
+                //         let displayedDate;
+                //         if (soonestDueDate) {
+                //             displayedDate = soonestDueDate.toString();
+                //         } else {
+                //             displayedDate = 'N/A';
+                //         };
+                //         soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
+                //     };
+                //     const updateDOMPosition = (projectForm) => {
+                //         const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+                //         const index = this.allProjects.getIndex(projectID);
+                //         if (this.allProjectsDiv.childElementCount >= 2) {
+                //             this.allProjectsDiv.insertBefore(
+                //                 projectForm,
+                //                 this.allProjectsDiv.childNodes[index]
+                //             );
+                //         };
+                //     };
+                //     const projectForm = e.target.parentNode.parentNode;
+                //     // console.log(projectForm);
+                //     updateSoonestDueDateDiv(projectForm, projectObject);
+                //     updateDOMPosition(projectForm, projectObject);
+                // };
+                // const updateProjectForm = (projectObject) => {
+                //     const updateSoonestDueDateDiv = (projectForm, projectObject) => {
+                //         const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
+                //         const soonestDueDate = projectObject.soonestDueDate;
+                //         let displayedDate;
+                //         if (soonestDueDate) {
+                //             displayedDate = soonestDueDate.toString();
+                //         } else {
+                //             displayedDate = 'N/A';
+                //         };
+                //         soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
+                //     };
+                //     const projectForm = e.target.parentNode.parentNode.parentNode;
+                //     updateSoonestDueDateDiv(projectForm, projectObject);
+                //     updateDOMPosition()
+                // };
                 removeTodo();
+                // const projectObject = getProject();
+                // updateProjectForm(projectObject);
             };
         });
         // TODO: add event listeners to aspects that change priorities, and 
@@ -483,4 +528,25 @@ export class DOMController {
         // - button.delete-todo, for the same reasons as above
         // - button.edit-todo, for the same reasons as above
     }
+    updateSoonestDueDateDiv(projectForm, projectObject) {
+        const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
+        const soonestDueDate = projectObject.soonestDueDate;
+        let displayedDate;
+        if (soonestDueDate) {
+            displayedDate = soonestDueDate.toString();
+        } else {
+            displayedDate = 'N/A';
+        };
+        soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
+    };
+    updateDOMPosition(projectForm) {
+        const projectID = parseInt(projectForm.getAttribute('data-object-id'));
+        const index = this.allProjects.getIndex(projectID);
+        if (this.allProjectsDiv.childElementCount >= 2) {
+            this.allProjectsDiv.insertBefore(
+                projectForm,
+                this.allProjectsDiv.childNodes[index]
+            );
+        };
+    };
 }
