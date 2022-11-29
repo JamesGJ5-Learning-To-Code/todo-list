@@ -329,7 +329,22 @@ export class DOMController {
                 this.newTodoForm.reset();
                 this.newTodoForm.classList.add('hidden');
             };
-            // const updateProjectForm
+            const updateProjectForm = (projectObject) => {
+                const updateSoonestDueDateDiv = (projectForm, projectObject) => {
+                    const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
+                    const soonestDueDate = projectObject.soonestDueDate;
+                    let displayedDate;
+                    if (soonestDueDate) {
+                        displayedDate = soonestDueDate.toString();
+                    } else {
+                        displayedDate = 'N/A';
+                    };
+                    soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
+                };
+                const projectForm = e.target.parentNode.parentNode;
+                // console.log(projectForm);
+                updateSoonestDueDateDiv(projectForm, projectObject);
+            };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
             projectObject.add(newTodoItem);
@@ -341,10 +356,10 @@ export class DOMController {
             );
             resetNewTodoForm();
             // - The submit button in this.newTodoForm, because that may change 
-            // Project.soonestDate and thus may require the text in 
-            // projectForm.soonestDateDiv to change and may require the position of 
+            // Project.soonestDueDate and thus may require the text in 
+            // projectForm.soonestDueDateDiv to change and may require the position of 
             // projectForm in this.allProjectsDiv to change.
-            updateProjecForm();
+            updateProjectForm(projectObject);
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains('edit-todo')) {
@@ -455,8 +470,8 @@ export class DOMController {
         // may thus call for DOM orders to change
         // Must do this for:
         // - The submit button in this.newTodoForm, because that may change 
-        // Project.soonestDate and thus may require the text in 
-        // projectForm.soonestDateDiv to change and may require the position of 
+        // Project.soonestDueDate and thus may require the text in 
+        // projectForm.soonestDueDateDiv to change and may require the position of 
         // projectForm in this.allProjectsDiv to change.
         // - button.delete-todo, for the same reasons as above
         // - button.edit-todo, for the same reasons as above
