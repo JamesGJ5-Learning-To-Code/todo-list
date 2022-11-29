@@ -366,10 +366,6 @@ export class DOMController {
                 projectObject.getIndex(newTodoItem.objectId)
             );
             resetNewTodoForm();
-            // - The submit button in this.newTodoForm, because that may change 
-            // Project.soonestDueDate and thus may require the text in 
-            // projectForm.soonestDueDateDiv to change and may require the position of 
-            // projectForm in this.allProjectsDiv to change.
             updateProjectForm(projectObject);
         });
         this.allProjectsDiv.addEventListener('click', (e) => {
@@ -480,7 +476,7 @@ export class DOMController {
         // TODO: add event listeners to aspects that change priorities, and 
         // may thus call for DOM orders to change
         // Must do this for:
-        // - The submit button in this.newTodoForm, because that may change 
+        // - DONE The submit button in this.newTodoForm, because that may change 
         // Project.soonestDueDate and thus may require the text in 
         // projectForm.soonestDueDateDiv to change and may require the position of 
         // projectForm in this.allProjectsDiv to change.
