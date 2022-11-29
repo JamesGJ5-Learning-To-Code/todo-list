@@ -23,11 +23,15 @@ export class TodoItem {
             const res = parseInt(dateString.replace('-', '').replace('-', ''));
             return res;
         };
-        const dateNumber = toNumber(value)
-        this._priority = -dateNumber;
+        if (value === -Infinity) {
+            this._priority = value;
+        } else {
+            const dateNumber = toNumber(value)
+            this._priority = -dateNumber;
+        };
         // TODO: later, only do this if the todo is now in the wrong place, and 
         // do this via binary search for the new place, not sorting
-        if (this.parentProject) {this.parentProject.sortByPriority();}
+        if (this.parentProject) {this.parentProject.sortByPriority();};
     }
     get priority() {
         return this._priority;

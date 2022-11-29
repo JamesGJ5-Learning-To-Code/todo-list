@@ -16,9 +16,11 @@ export class AllProjects {
         this.projectList.push(project);
         this.sortByPriority();
         // console.log(this.projectList);
+        project.parentAllProjects = this;
     }
     sortByPriority() {
         this.projectList.sort((p1, p2) => p2.priority - p1.priority);
+        console.log(this.projectList);
     }
     getIndex(projectID) {
         const index = this.projectList.findIndex(project => {
