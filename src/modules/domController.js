@@ -445,5 +445,7 @@ export class DOMController {
                 removeTodo();
             };
         });
+        // TODO: add event listeners to aspects that change priorities, and 
+        // may thus call for DOM orders to change
     }
 }
