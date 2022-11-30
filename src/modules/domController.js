@@ -354,7 +354,7 @@ export class DOMController {
                 const projectForm = e.target.parentNode.parentNode;
                 // console.log(projectForm);
                 this.updateSoonestDueDateDiv(projectForm, projectObject);
-                this.updateDOMPosition(projectForm, projectObject);
+                this.updateDOMPosition(projectForm);
             };
             const projectObject = getParentProject();
             const newTodoItem = makeTodoItem(projectObject);
@@ -462,57 +462,21 @@ export class DOMController {
                     parentProject.remove(index);
                     // console.log(parentProject.todoList);
                 };
+                const updateProjectForm = (projectObject) => {
+                    // console.log(projectObject);
+                    const projectForm = e.target.parentNode.parentNode.parentNode;
+                    this.updateSoonestDueDateDiv(projectForm, projectObject);
+                    this.updateDOMPosition(projectForm);
+                };
                 const removeFromDOM = (todoItemForm) => {
                     todoItemForm.remove();
                 };
                 const removeTodo = () => {
                     const todoItemForm = e.target.parentNode;
                     removeInternally(todoItemForm);
+                    updateProjectForm(getProject());
                     removeFromDOM(todoItemForm);
                 };
-                // const updateProjectForm = (projectObject) => {
-                //     const updateSoonestDueDateDiv = (projectForm, projectObject) => {
-                //         const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
-                //         const soonestDueDate = projectObject.soonestDueDate;
-                //         let displayedDate;
-                //         if (soonestDueDate) {
-                //             displayedDate = soonestDueDate.toString();
-                //         } else {
-                //             displayedDate = 'N/A';
-                //         };
-                //         soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
-                //     };
-                //     const updateDOMPosition = (projectForm) => {
-                //         const projectID = parseInt(projectForm.getAttribute('data-object-id'));
-                //         const index = this.allProjects.getIndex(projectID);
-                //         if (this.allProjectsDiv.childElementCount >= 2) {
-                //             this.allProjectsDiv.insertBefore(
-                //                 projectForm,
-                //                 this.allProjectsDiv.childNodes[index]
-                //             );
-                //         };
-                //     };
-                //     const projectForm = e.target.parentNode.parentNode;
-                //     // console.log(projectForm);
-                //     updateSoonestDueDateDiv(projectForm, projectObject);
-                //     updateDOMPosition(projectForm, projectObject);
-                // };
-                // const updateProjectForm = (projectObject) => {
-                //     const updateSoonestDueDateDiv = (projectForm, projectObject) => {
-                //         const soonestDueDateDiv = projectForm.querySelector('.soonest-due-date');
-                //         const soonestDueDate = projectObject.soonestDueDate;
-                //         let displayedDate;
-                //         if (soonestDueDate) {
-                //             displayedDate = soonestDueDate.toString();
-                //         } else {
-                //             displayedDate = 'N/A';
-                //         };
-                //         soonestDueDateDiv.textContent = `Soonest Due Date: ${displayedDate}`;
-                //     };
-                //     const projectForm = e.target.parentNode.parentNode.parentNode;
-                //     updateSoonestDueDateDiv(projectForm, projectObject);
-                //     updateDOMPosition()
-                // };
                 removeTodo();
                 // const projectObject = getProject();
                 // updateProjectForm(projectObject);
@@ -542,11 +506,10 @@ export class DOMController {
     updateDOMPosition(projectForm) {
         const projectID = parseInt(projectForm.getAttribute('data-object-id'));
         const index = this.allProjects.getIndex(projectID);
-        if (this.allProjectsDiv.childElementCount >= 2) {
-            this.allProjectsDiv.insertBefore(
-                projectForm,
-                this.allProjectsDiv.childNodes[index]
-            );
-        };
+        projectForm.remove();
+        this.allProjectsDiv.insertBefore(
+            projectForm,
+            this.allProjectsDiv.childNodes[index]
+        );
     };
 }
