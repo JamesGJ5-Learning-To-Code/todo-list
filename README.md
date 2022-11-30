@@ -100,10 +100,10 @@ ADDED TO CLASS CONSTRUCTOR
 # DOM Layout
 
 1. Upon opening, you just see a list of projects, laid out just as in allProjects.projectList, with a button (button#create-project) at the top for adding a new project. Within each project, unless expanded, you see only:
-- i) project.title
-- ii) project.soonestDueDate
-- iii) button.edit-project
-- iv) button.delete-project
+- i) DONE project.title
+- ii) DONE project.soonestDueDate
+- iii) DONE button.edit-project
+- iv) DONE button.delete-project
 
 DONE button#new-project-button
 - Clicking this should:
@@ -136,9 +136,8 @@ DONE button.toggle-todo-list
 - i) DONE todoObject.title
 - ii) DONE todoObject.description
 - iii) DONE todoObject.dueDate
-- iv) button.edit-todo
-- v) button.delete-todo
-- vi) button.toggle-todo
+- iv) DONE button.edit-todo
+- v) DONE button.delete-todo
 
 button.create-todo
 - Clicking this should:
@@ -171,14 +170,14 @@ button.edit-todo
 
 # Notes
 
-- DOM items (specifically for project objects and todoItem objects) should be linked to their objects by giving the DOM item and object a unique ID that can be looked for when iterating through allProjects.projectList or project.todoList; can store value in data-object-id in DOM and simply as a property of the project object or TODO object
-- If a TODO is created or deleted, may have to change project.soonestDueDate, which may impact project.priority. May also have to change appearance of displayed list of TODOs.
-- If a project.priority changes, the order of projects in the DOM may have to change (for now, just reset or something)
-- Creating new project might alter order of projects in DOM
-- Will use classes for practice
-- Consider adding getters and setter to classes, but only if security requires
-- Try to make as many class properties private as possible
-- Stop class methods and properties from polluting global namespace so much
+- DONE DOM items (specifically for project objects and todoItem objects) should be linked to their objects by giving the DOM item and object a unique ID that can be looked for when iterating through allProjects.projectList or project.todoList; can store value in data-object-id in DOM and simply as a property of the project object or TODO object
+- DONE If a TODO is created or deleted, may have to change project.soonestDueDate, which may impact project.priority. May also have to change appearance of displayed list of TODOs.
+- DONE If a project.priority changes, the order of projects in the DOM may have to change (for now, just reset or something)
+- DONE Creating new project might alter order of projects in DOM
+- DONE Will use classes for practice
+- DONE Consider adding getters and setter to classes, but only if security requires
+- LATER Try to make as many class properties private as possible
+- LATER Stop class methods and properties from polluting global namespace so much
 
 
 # Step-By-Step Plan
@@ -197,9 +196,8 @@ div.todo-list which will house individual todos; div.todo-list should have class
 - DONE Give functionality to the above button
 - DONE Create a button for adding todos in the div.todo-list
 - Give functionality to the above button
-5. Add a couple of projects to the DOM
-6. Add a couple of TODOs to each project
-7. Test everything
+5. DONE Add a couple of projects to the DOM
+6. DONE Add a couple of TODOs to each project
+7. DONE Test everything
 ...
-Penultimate. Hiding/expansion
 Last. Persistence
