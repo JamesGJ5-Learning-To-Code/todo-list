@@ -431,6 +431,12 @@ export class DOMController {
                     const todoItemIndex = projectObject.getIndex(todoItemID);
                     todoListDiv.insertBefore(todoItemForm, todoListDiv.childNodes[todoItemIndex]);
                 };
+                const updateProjectForm = (projectObject) => {
+                    // console.log(projectObject);
+                    const projectForm = e.target.parentNode.parentNode.parentNode;
+                    this.updateSoonestDueDateDiv(projectForm, projectObject);
+                    this.updateDOMPosition(projectForm);
+                };
                 const removeSubmitEditButton = () => {
                     e.target.remove();
                 };
@@ -441,6 +447,7 @@ export class DOMController {
                 editTodo(todoItemObject);
                 // console.log(todoItemObject);
                 updateDOMPosition(todoItemID, projectObject);
+                updateProjectForm(projectObject);
                 removeSubmitEditButton();
             };
         });
