@@ -1,1 +1,1 @@
-Uncleanly TODO list featuring a lot of repeated code.
+Uncleanly-written TODO list featuring a lot of repeated code.
